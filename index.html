@@ -7,15 +7,31 @@
   <meta name="description" content="MT Professionals provides management consultancy, bookkeeping, advisory, payroll, job costing and audit support for contractors, manufacturers and service businesses.">
   <meta name="keywords" content="bookkeeping, Chartered Accountant, accounting advisory, management consultancy, payroll, job costing, QuickBooks, Xero, audit">
   <meta name="author" content="MT Professionals">
+  <meta name="robots" content="index, follow">
+  <!-- TODO: replace with your live domain once the site is published -->
+  <link rel="canonical" href="https://www.mtprofessionals.com/">
   <meta property="og:title" content="MT Professionals | Accounting & Advisory">
   <meta property="og:description" content="Financial clarity your business can actually act on.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="MT Professionals">
+  <meta property="og:url" content="https://www.mtprofessionals.com/">
+  <!-- TODO: add a real 1200x630 social preview image at this path -->
+  <meta property="og:image" content="https://www.mtprofessionals.com/assets/og-cover.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MT Professionals | Accounting & Advisory">
+  <meta name="twitter:description" content="Financial clarity your business can actually act on.">
+  <meta name="twitter:image" content="https://www.mtprofessionals.com/assets/og-cover.jpg">
   <title>MT Professionals | Management Consultancy, Bookkeeping, Advisory & Audit</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101A2E'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%23D3AA65' text-anchor='middle'%3EMT%3C/text%3E%3C/svg%3E">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet"> -->
 
   <style>
     :root{
@@ -76,7 +92,6 @@
     }
     .btn-primary{background:var(--navy);color:var(--cream-2);box-shadow:0 8px 20px rgba(16,26,46,.12)}
     .btn-primary:hover{background:var(--ink);transform:translateY(-2px)}
-    .btn-primary:disabled{opacity:.65;cursor:wait;transform:none}
     .btn-outline{border-color:rgba(255,255,255,.35);color:var(--cream-2)}
     .btn-outline:hover{border-color:var(--gold-light);color:var(--gold-light)}
     .btn-outline-navy{border-color:var(--navy);color:var(--navy)}
@@ -252,7 +267,7 @@
     input,select,textarea{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:6px;font-size:13.5px;color:var(--slate);background:#fff;transition:.2s}
     input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,134,62,.10)}
     textarea{resize:vertical;min-height:125px}
-    .form-msg{display:none;font-size:13px;color:var(--success);font-weight:700;padding:12px;background:#eef8f1;border-radius:6px}
+    .form-msg{display:none;font-size:13px;color:var(--success);font-weight:700;padding:12px;background:#eef8f1;border:1px solid transparent;border-radius:6px;line-height:1.6}
     .form-msg.show{display:block}
 
     /* FOOTER */
@@ -294,6 +309,7 @@
       background:var(--gold);color:var(--ink);font-weight:900;border:2px solid #fff;
       box-shadow:0 8px 24px rgba(16,26,46,.22);transition:.2s
     }
+    
     .float-btn:hover{transform:translateY(-3px);background:var(--gold-light)}
 
     /* RESPONSIVE */
@@ -374,6 +390,117 @@
       *,*::before,*::after{transition:none!important;animation:none!important}
       .reveal{opacity:1!important;transform:none!important}
     }
+  
+    /* ===== PREMIUM BUSINESS WEBSITE ADDITIONS ===== */
+    :root{
+      --deep:#101a2e;--deep2:#17243d;--gold:#b8863e;--gold2:#d2aa68;
+      --cream:#f7f3eb;--paper:#fffdf9;--line:#e5dfd3;--muted:#687386;
+      --success:#1f9d68;
+    }
+    body{background:var(--paper)}
+    .eyebrow{letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+    .section-intro{max-width:720px;margin:0 auto 34px;text-align:center}
+    .section-intro p{color:var(--muted);line-height:1.75}
+    .premium-band{background:var(--deep);color:#fff;padding:42px 0}
+    .premium-band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12)}
+    .premium-stat{background:var(--deep);padding:22px;text-align:center}
+    .premium-stat strong{display:block;font-size:28px;color:#fff}
+    .premium-stat span{display:block;color:#b9c1cf;font-size:12px;margin-top:5px}
+
+    .about-premium{padding:90px 0;background:#fff}
+    .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+    .about-copy h2{font-size:clamp(30px,4vw,46px);line-height:1.08;color:var(--deep);margin:10px 0 18px}
+    .about-copy p{color:var(--muted);line-height:1.85}
+    .about-checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+    .about-check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#354052}
+    .about-check i{color:var(--gold);margin-top:3px}
+    .profile-card{background:linear-gradient(145deg,#fff,#f3eee5);border:1px solid var(--line);padding:34px;border-radius:14px;box-shadow:0 20px 50px rgba(16,26,46,.09)}
+    .profile-avatar{width:86px;height:86px;border-radius:50%;background:var(--deep);display:grid;place-items:center;color:var(--gold2);font-size:30px;margin-bottom:18px}
+    .profile-card h3{margin:0;color:var(--deep);font-size:23px}
+    .profile-role{color:var(--gold);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:7px 0 16px}
+    .profile-card p{color:var(--muted);line-height:1.75;font-size:13px}
+
+    .deliverables{padding:90px 0;background:var(--cream)}
+    .deliverables-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .deliverable{background:#fff;border:1px solid var(--line);padding:23px;border-radius:10px}
+    .deliverable i{font-size:20px;color:var(--gold);margin-bottom:15px}
+    .deliverable h3{font-size:15px;color:var(--deep);margin:0 0 8px}
+    .deliverable p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+
+    .case-studies{padding:90px 0;background:#fff}
+    .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .case-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+    .case-top{padding:24px;background:var(--deep);color:#fff}
+    .case-top .tag{display:inline-block;border:1px solid rgba(255,255,255,.2);padding:5px 9px;border-radius:30px;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+    .case-top h3{font-size:20px;margin:18px 0 0}
+    .case-body{padding:23px}
+    .case-body h4{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin:0 0 6px}
+    .case-body p{font-size:12px;color:var(--muted);line-height:1.7;margin:0 0 17px}
+
+    .packages{padding:90px 0;background:var(--cream)}
+    .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+    .package{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;position:relative}
+    .package.featured{border:2px solid var(--gold);transform:translateY(-7px);box-shadow:0 18px 45px rgba(16,26,46,.1)}
+    .package-badge{position:absolute;top:-12px;right:20px;background:var(--gold);color:#fff;border-radius:30px;padding:5px 11px;font-size:9px;font-weight:900;text-transform:uppercase}
+    .package h3{color:var(--deep);margin:0 0 6px}
+    .package .sub{font-size:12px;color:var(--muted);margin-bottom:18px}
+    .package ul{padding:0;margin:0;list-style:none}
+    .package li{font-size:12px;color:#465064;padding:8px 0;border-top:1px solid #eee}
+    .package li i{color:var(--gold);margin-right:7px}
+
+    .resources{padding:90px 0;background:#fff}
+    .resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .resource-card{padding:25px;border:1px solid var(--line);border-radius:11px}
+    .resource-card .resource-icon{width:40px;height:40px;border-radius:9px;background:rgba(184,134,62,.12);color:var(--gold);display:grid;place-items:center;margin-bottom:17px}
+    .resource-card h3{font-size:17px;color:var(--deep);margin:0 0 9px}
+    .resource-card p{font-size:12px;line-height:1.7;color:var(--muted);margin:0 0 15px}
+    .resource-card a{font-size:11px;font-weight:900;color:var(--gold);text-decoration:none}
+
+    .consultation{padding:90px 0;background:var(--deep);color:#fff}
+    .consult-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:start}
+    .consult-copy h2{font-size:clamp(30px,4vw,44px);line-height:1.08;margin:10px 0 17px}
+    .consult-copy p{color:#b9c1cf;line-height:1.8}
+    .consult-list{list-style:none;padding:0;margin:25px 0}
+    .consult-list li{margin:12px 0;color:#e8ebf0;font-size:13px}
+    .consult-list i{color:var(--gold2);margin-right:9px}
+    .consult-card{background:#fff;border-radius:14px;padding:28px;color:var(--deep)}
+    .consult-card h3{margin:0 0 6px;font-size:20px}
+    .consult-card p{color:var(--muted);font-size:12px;margin:0 0 18px}
+
+    .final-cta{padding:65px 0;background:var(--cream);text-align:center}
+    .final-cta h2{color:var(--deep);font-size:clamp(28px,4vw,42px);margin:0 0 12px}
+    .final-cta p{color:var(--muted);max-width:650px;margin:0 auto 22px;line-height:1.7}
+
+    .form-security{font-size:10.5px;color:var(--muted);text-align:center;margin-top:4px}
+    .form-msg a{font-weight:800;color:var(--deep)}
+    .form-msg.error{background:#fff0f0;border-color:#f2c5c5;color:#9b2c2c}
+    .form-msg.success{background:#eefaf4;border-color:#b9e4cc;color:#176b47}
+
+    .floating-contact{gap:9px}
+    .float-btn{display:grid;place-items:center}
+    .float-btn i{font-size:18px}
+    .email-float{background:#ea4335!important;color:#fff!important}
+    .email-float:hover{background:#d93025!important}
+    .phone-float{background:#4285f4!important;color:#fff!important}
+    .phone-float:hover{background:#3367d6!important}
+    .whatsapp-float{background:#25d366!important;color:#fff!important}
+    .whatsapp-float:hover{background:#20ba5a!important}
+    .back-top{background:var(--deep)!important;color:#fff!important}
+    .back-top:hover{background:var(--gold)!important}
+
+    @media(max-width:900px){
+      .about-grid,.consult-grid{grid-template-columns:1fr}
+      .deliverables-grid{grid-template-columns:1fr 1fr}
+      .case-grid,.package-grid,.resource-grid{grid-template-columns:1fr}
+      .package.featured{transform:none}
+      .premium-band-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:600px){
+      .about-checks,.deliverables-grid,.premium-band-grid{grid-template-columns:1fr}
+      .about-premium,.deliverables,.case-studies,.packages,.resources,.consultation{padding:62px 0}
+      .profile-card{padding:25px}
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -381,12 +508,20 @@
     "@context":"https://schema.org",
     "@type":"ProfessionalService",
     "name":"MT Professionals",
-    "description":"Management consultancy, bookkeeping, advisory and audit support.",
-    "email":"mailto:mtprofessionalsca@gmail.com",
-    "telephone":"+92 3252118083",
+    "description":"Management consultancy, bookkeeping, advisory and audit support for contractors, manufacturers and service businesses.",
+    "url":"https://www.mtprofessionals.com/",
+    "email":"mtprofessionalsca@gmail.com",
+    "telephone":"+92-325-2118083",
+    "priceRange":"$$",
+    "areaServed":"Pakistan",
+    "address":{
+      "@type":"PostalAddress",
+      "addressCountry":"PK"
+    },
     "serviceType":["Management Consultancy","Bookkeeping","Advisory","Audit"]
   }
   </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -569,9 +704,9 @@
           <p>Use this section for verified client testimonials when you have them. The sample wording below should be replaced with real reviews before publishing.</p>
         </div>
         <div class="quote-grid">
-          <article class="quote-card reveal"><div class="stars">★★★★★</div><p>“Clear reporting and practical advice make it much easier to understand where our business is actually making money.”</p><strong>Client Testimonial</strong><small>Construction business</small></article>
-          <article class="quote-card reveal"><div class="stars">★★★★★</div><p>“The focus on reconciliations, job costing and timely reporting gives us confidence in every monthly close.”</p><strong>Client Testimonial</strong><small>Manufacturing business</small></article>
-          <article class="quote-card reveal"><div class="stars">★★★★★</div><p>“A professional, responsive approach with explanations we can actually use when making business decisions.”</p><strong>Client Testimonial</strong><small>Service business</small></article>
+          <article class="quote-card reveal"><div class="stars">★★★★★</div><p>"Clear reporting and practical advice make it much easier to understand where our business is actually making money."</p><strong>Client Testimonial</strong><small>Construction business</small></article>
+          <article class="quote-card reveal"><div class="stars">★★★★★</div><p>"The focus on reconciliations, job costing and timely reporting gives us confidence in every monthly close."</p><strong>Client Testimonial</strong><small>Manufacturing business</small></article>
+          <article class="quote-card reveal"><div class="stars">★★★★★</div><p>"A professional, responsive approach with explanations we can actually use when making business decisions."</p><strong>Client Testimonial</strong><small>Service business</small></article>
         </div>
       </div>
     </section>
@@ -599,7 +734,152 @@
       </div>
     </section>
 
-    <section id="contact">
+    
+    <!-- TRUST / CREDENTIALS -->
+    <section class="premium-band" aria-label="MT Professionals highlights">
+      <div class="wrap premium-band-grid">
+        <div class="premium-stat"><strong>CA-Led</strong><span>Professional financial expertise</span></div>
+        <div class="premium-stat"><strong>Monthly</strong><span>Clear books & reporting</span></div>
+        <div class="premium-stat"><strong>Practical</strong><span>Business-focused advice</span></div>
+        <div class="premium-stat"><strong>Confidential</strong><span>Careful handling of your data</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT / FOUNDER -->
+    <section class="about-premium">
+      <div class="wrap about-grid">
+        <div class="about-copy">
+          <div class="eyebrow" style="color:var(--gold);font-size:11px">ABOUT MT PROFESSIONALS</div>
+          <h2>More than bookkeeping. A financial partner for your business.</h2>
+          <p>MT Professionals helps business owners gain control over their accounting, reporting and financial decisions through practical, professional support.</p>
+          <p>Our focus is simple: accurate information, clear communication and useful insight that helps you run your business with greater confidence.</p>
+          <div class="about-checks">
+            <div class="about-check"><i class="fa-solid fa-circle-check"></i><span>Professional accounting support</span></div>
+            <div class="about-check"><i class="fa-solid fa-circle-check"></i><span>Management-focused reporting</span></div>
+            <div class="about-check"><i class="fa-solid fa-circle-check"></i><span>Business advisory mindset</span></div>
+            <div class="about-check"><i class="fa-solid fa-circle-check"></i><span>Confidential client service</span></div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="profile-avatar"><i class="fa-solid fa-user-tie"></i></div>
+          <h3>Meet the Professional Behind Your Numbers</h3>
+          <div class="profile-role">Chartered Accountant • Advisory & Management Support</div>
+          <p>Replace this paragraph with the founder/partner's verified biography, qualification, years of experience and professional memberships. Keeping this information accurate is especially important for a professional services firm.</p>
+          <a class="btn btn-outline" href="#contact">Connect With Our Team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MONTHLY DELIVERABLES -->
+    <section class="deliverables">
+      <div class="wrap">
+        <div class="section-intro">
+          <div class="eyebrow" style="color:var(--gold);font-size:11px">WHAT YOU GET</div>
+          <h2>Clear financial information, every month.</h2>
+          <p>Your monthly service should give you more than transactions. It should give you visibility.</p>
+        </div>
+        <div class="deliverables-grid">
+          <div class="deliverable"><i class="fa-solid fa-book-open"></i><h3>Reconciled Books</h3><p>Bank and account reconciliations designed to keep your records reliable.</p></div>
+          <div class="deliverable"><i class="fa-solid fa-chart-line"></i><h3>Management Reports</h3><p>Understand revenue, expenses, profitability and financial trends.</p></div>
+          <div class="deliverable"><i class="fa-solid fa-money-bill-trend-up"></i><h3>Cash-Flow Visibility</h3><p>Better awareness of what is coming in, going out and what needs attention.</p></div>
+          <div class="deliverable"><i class="fa-solid fa-briefcase"></i><h3>Business Insight</h3><p>Practical conversations around the numbers behind your business.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section class="case-studies">
+      <div class="wrap">
+        <div class="section-intro">
+          <div class="eyebrow" style="color:var(--gold);font-size:11px">CASE STUDIES</div>
+          <h2>Show clients what better financial visibility looks like.</h2>
+          <p>Use real client stories here. The examples below are placeholders until you provide verified results.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="case-top"><span class="tag">Construction</span><h3>Improving job-cost visibility</h3></div>
+            <div class="case-body"><h4>Challenge</h4><p>Management lacked a consistent view of project-level costs and margins.</p><h4>Approach</h4><p>Bookkeeping cleanup, categorization and management reporting focused on job performance.</p><h4>Result</h4><p>Replace this with the client's verified outcome and measurable improvement.</p></div>
+          </article>
+          <article class="case-card">
+            <div class="case-top"><span class="tag">Professional Services</span><h3>Building a cleaner monthly close</h3></div>
+            <div class="case-body"><h4>Challenge</h4><p>Reports were delayed and decision-making relied on incomplete information.</p><h4>Approach</h4><p>Created a consistent monthly reconciliation and reporting process.</p><h4>Result</h4><p>Replace this with a verified result such as faster reporting or improved visibility.</p></div>
+          </article>
+          <article class="case-card">
+            <div class="case-top"><span class="tag">Growing Business</span><h3>From bookkeeping to advisory</h3></div>
+            <div class="case-body"><h4>Challenge</h4><p>The owner had financial data but lacked a clear process for using it.</p><h4>Approach</h4><p>Combined accurate books with regular financial review and planning conversations.</p><h4>Result</h4><p>Replace this with the client's verified business outcome.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE PACKAGES -->
+    <section class="packages">
+      <div class="wrap">
+        <div class="section-intro">
+          <div class="eyebrow" style="color:var(--gold);font-size:11px">SERVICE LEVELS</div>
+          <h2>Support that grows with your business.</h2>
+          <p>Don't publish prices until your actual packages are finalized. Use this section to explain the level of support clients can choose.</p>
+        </div>
+        <div class="package-grid">
+          <div class="package">
+            <h3>Essential</h3><div class="sub">For businesses that need dependable books.</div>
+            <ul><li><i class="fa-solid fa-check"></i>Bookkeeping support</li><li><i class="fa-solid fa-check"></i>Reconciliations</li><li><i class="fa-solid fa-check"></i>Basic monthly reporting</li><li><i class="fa-solid fa-check"></i>Professional support</li></ul>
+            <a href="#contact" class="btn btn-outline" style="margin-top:20px">Discuss Your Needs</a>
+          </div>
+          <div class="package featured">
+            <span class="package-badge">Most Popular</span>
+            <h3>Professional</h3><div class="sub">For growing businesses that need visibility.</div>
+            <ul><li><i class="fa-solid fa-check"></i>Everything in Essential</li><li><i class="fa-solid fa-check"></i>Management reporting</li><li><i class="fa-solid fa-check"></i>Cash-flow visibility</li><li><i class="fa-solid fa-check"></i>Regular review conversations</li></ul>
+            <a href="#contact" class="btn btn-gold" style="margin-top:20px">Get a Custom Quote</a>
+          </div>
+          <div class="package">
+            <h3>Advisory</h3><div class="sub">For owners who want deeper financial guidance.</div>
+            <ul><li><i class="fa-solid fa-check"></i>Everything in Professional</li><li><i class="fa-solid fa-check"></i>Planning & forecasting</li><li><i class="fa-solid fa-check"></i>Management consultancy</li><li><i class="fa-solid fa-check"></i>Strategic financial insight</li></ul>
+            <a href="#contact" class="btn btn-outline" style="margin-top:20px">Talk to an Advisor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="resources">
+      <div class="wrap">
+        <div class="section-intro">
+          <div class="eyebrow" style="color:var(--gold);font-size:11px">INSIGHTS</div>
+          <h2>Useful financial guidance for business owners.</h2>
+          <p>These can become SEO-friendly articles once you are ready to publish them.</p>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card"><div class="resource-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div><h3>7 Signs Your Books Need Cleanup</h3><p>Learn the warning signs that your accounting records may be holding your business back.</p><a href="#contact">Ask Us About Cleanup →</a></article>
+          <article class="resource-card"><div class="resource-icon"><i class="fa-solid fa-chart-pie"></i></div><h3>Understanding Your Profit & Loss</h3><p>A practical guide to reading the numbers that matter to your business.</p><a href="#contact">Discuss Your Reports →</a></article>
+          <article class="resource-card"><div class="resource-icon"><i class="fa-solid fa-coins"></i></div><h3>Improve Business Cash Flow</h3><p>Understand the difference between profit and cash and why both matter.</p><a href="#contact">Talk About Cash Flow →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSULTATION -->
+    <section class="consultation">
+      <div class="wrap consult-grid">
+        <div class="consult-copy">
+          <div class="eyebrow" style="color:var(--gold2);font-size:11px">FREE CONSULTATION</div>
+          <h2>Let's understand your business before recommending a solution.</h2>
+          <p>A short discovery conversation helps us understand your current setup, challenges and the type of support that would actually be useful.</p>
+          <ul class="consult-list">
+            <li><i class="fa-solid fa-check"></i>No obligation initial conversation</li>
+            <li><i class="fa-solid fa-check"></i>Discuss your current accounting setup</li>
+            <li><i class="fa-solid fa-check"></i>Identify your biggest financial challenges</li>
+            <li><i class="fa-solid fa-check"></i>Get a clear next-step recommendation</li>
+          </ul>
+        </div>
+        <div class="consult-card">
+          <h3>Book Your Consultation</h3>
+          <p>Use the enquiry form below to tell us a little about your business.</p>
+          <a href="#contact" class="btn btn-gold">Start My Enquiry <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+<section id="contact">
       <div class="wrap contact-grid">
         <div class="contact-info">
           <span class="eyebrow">Get In Touch</span>
@@ -611,13 +891,10 @@
           <div class="contact-detail"><div class="label">Services</div><div class="value">Management Consultancy · Bookkeeping · Advisory · Audit</div></div>
           <div class="contact-detail"><div class="label">Response</div><div class="value">Within 1 business day</div></div>
 
-          <div class="contact-note"><strong>Private & simple:</strong> Submit the form directly. Your enquiry will be sent to MT Professionals without sending you back to the homepage.</div>
+          <div class="contact-note"><strong>Important:</strong> The form below opens your email client with the enquiry details. For true online submissions, connect it to Formspree, Web3Forms, Netlify Forms, or your own backend.</div>
         </div>
 
-        <form id="contactForm" action="https://formsubmit.co/ajax/mtprofessionalsca@gmail.com" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="New Enquiry — MT Professionals Website">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <form id="contactForm">
           <div class="form-row">
             <div><label for="name">Full Name *</label><input type="text" id="name" name="name" autocomplete="name" required></div>
             <div><label for="company">Company Name</label><input type="text" id="company" name="company" autocomplete="organization"></div>
@@ -627,8 +904,8 @@
             <div><label for="phone">Phone</label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
           </div>
           <div>
-            <label for="service">Service Interested In</label>
-            <select id="service" name="service">
+            <label for="service">Service Interested In *</label>
+            <select id="service" name="service" required>
               <option value="" selected disabled>Select a service</option>
               <option>Management Consultancy</option><option>Bookkeeping</option><option>Advisory</option><option>Audit</option><option>Not sure yet</option>
             </select>
@@ -637,7 +914,7 @@
             <label for="message">Tell us about your business</label>
             <textarea id="message" name="message" placeholder="What software do you use? What's your biggest bookkeeping challenge right now?"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" id="submitBtn">Send Enquiry <span aria-hidden="true">→</span></button>
+          <button type="submit" class="btn btn-primary">Send Enquiry</button>
           <div class="form-msg" id="formMsg" role="status"></div>
         </form>
       </div>
@@ -660,14 +937,23 @@
         <span class="footer-links"><a href="#contact">Contact</a><a href="#faq">FAQ</a><a href="#top">Back to top ↑</a></span>
       </div>
     </div>
-  </footer>
+  
+        <div class="legal-links" style="text-align:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:#aeb6c5">
+          <a href="#" onclick="alert('Add your verified Privacy Policy page before publishing.');return false;" style="color:#c7ced9;margin:0 8px">Privacy Policy</a>
+          <span>•</span>
+          <a href="#" onclick="alert('Add your verified Terms page before publishing.');return false;" style="color:#c7ced9;margin:0 8px">Terms & Conditions</a>
+          <span>•</span>
+          <a href="#" onclick="alert('Add your professional disclaimer before publishing.');return false;" style="color:#c7ced9;margin:0 8px">Disclaimer</a>
+        </div>
+</footer>
 
   <div class="floating-contact" aria-label="Quick contact">
-    <a class="float-btn" href="mailto:mtprofessionalsca@gmail.com" aria-label="Email MT Professionals" title="Email">✉</a>
-    <a class="float-btn" href="tel:+923252118083" aria-label="Call MT Professionals" title="Call">☎</a>
-    <a class="float-btn" href="https://wa.me/923252118083" target="_blank" rel="noopener" aria-label="WhatsApp MT Professionals" title="WhatsApp">W</a>
-  </div>
-  <a class="back-top" id="backTop" href="#top" aria-label="Back to top" title="Back to top">↑</a>
+    <a class="float-btn email-float" href="mailto:mtprofessionalsca@gmail.com" aria-label="Email MT Professionals" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+    <a class="float-btn phone-float" href="tel:+923252118083" aria-label="Call MT Professionals" title="Call"><i class="fa-solid fa-phone" aria-hidden="true"></i></a>
+  
+    <a class="float-btn whatsapp-float" href="https://wa.me/923252118083" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp MT Professionals" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div>
+
+  <a href="#top" id="backTop" class="back-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
 
   <script>
     (() => {
@@ -734,57 +1020,56 @@
       }, {rootMargin:'-35% 0px -55% 0px', threshold:0});
       sections.forEach(section => observer.observe(section));
 
-      // Enquiry form: submits without navigating away from the page.
+      // Enquiry form: validates required fields, then lets the visitor choose
+      // whether to send via their email client or WhatsApp.
+      // NOTE: this is a front-end-only fallback. For real online form
+      // submissions (no email client required), wire this up to a service
+      // such as Formspree, Web3Forms, Netlify Forms, or your own backend.
       const form = document.getElementById('contactForm');
       const msg = document.getElementById('formMsg');
-      const submitBtn = document.getElementById('submitBtn');
 
-      form.addEventListener('submit', async (e) => {
+      form.addEventListener('submit', e => {
         e.preventDefault();
 
-        if (!form.checkValidity()) {
-          form.reportValidity();
+        const data = new FormData(form);
+        const name = (data.get('name') || '').toString().trim();
+        const email = (data.get('email') || '').toString().trim();
+        const service = (data.get('service') || '').toString().trim();
+        const company = (data.get('company') || '').toString().trim();
+        const phone = (data.get('phone') || '').toString().trim();
+        const message = (data.get('message') || '').toString().trim();
+
+        if(!name || !email || !service){
+          msg.className = 'form-msg show error';
+          msg.textContent = 'Please fill in your name, email and the service you\u2019re interested in.';
+          msg.scrollIntoView({behavior:'smooth', block:'nearest'});
           return;
         }
 
-        const data = new FormData(form);
-        if (String(data.get('_honey') || '').trim()) return;
+        const subject = 'MT Professionals Website Enquiry \u2014 ' + service;
+        const body =
+          'Name: ' + name + '\n' +
+          'Company: ' + (company || 'Not provided') + '\n' +
+          'Email: ' + email + '\n' +
+          'Phone: ' + (phone || 'Not provided') + '\n' +
+          'Service: ' + service + '\n\n' +
+          'Message:\n' + (message || 'Not provided');
 
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Sending…';
-        msg.classList.remove('show');
-        msg.textContent = '';
+        const mailto = 'mailto:mtprofessionalsca@gmail.com?subject=' +
+          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        const wa = 'https://wa.me/923252118083?text=' + encodeURIComponent(
+          'Hello MT Professionals. My name is ' + name +
+          '. I am interested in ' + service + '.\n\n' + (message || '')
+        );
 
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-          });
+        msg.className = 'form-msg show success';
+        msg.innerHTML =
+          '<strong>Your enquiry is ready to send.</strong><br>' +
+          'Choose how you\u2019d like to send it: ' +
+          '<a href="' + mailto + '"><i class="fa-solid fa-envelope"></i> Email</a> &middot; ' +
+          '<a href="' + wa + '" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>';
 
-          if (!response.ok) throw new Error('Submission failed');
-
-          form.reset();
-          msg.innerHTML = '<strong>✓ Enquiry sent successfully.</strong><br>Thank you. MT Professionals will contact you within one business day.';
-          msg.classList.add('show');
-        } catch (error) {
-          const emailBody = encodeURIComponent(
-            'New enquiry from MT Professionals website\n\n' +
-            'Name: ' + (data.get('name') || '') + '\n' +
-            'Company: ' + (data.get('company') || 'Not provided') + '\n' +
-            'Email: ' + (data.get('email') || '') + '\n' +
-            'Phone: ' + (data.get('phone') || 'Not provided') + '\n' +
-            'Service: ' + (data.get('service') || 'Not specified') + '\n\n' +
-            'Message:\n' + (data.get('message') || 'Not provided')
-          );
-          const emailLink = 'mailto:mtprofessionalsca@gmail.com?subject=' +
-            encodeURIComponent('New Website Enquiry — MT Professionals') + '&body=' + emailBody;
-          msg.innerHTML = '<strong>Automatic sending is unavailable.</strong><br><a href="' + emailLink + '">Click here to send this enquiry by email</a>.';
-          msg.classList.add('show');
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = 'Send Enquiry <span aria-hidden="true">→</span>';
-        }
+        msg.scrollIntoView({behavior:'smooth', block:'nearest'});
       });
     })();
   </script>
