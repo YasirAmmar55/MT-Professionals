@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101A2E">
+  <meta name="description" content="MT Professionals provides management consultancy, bookkeeping, advisory, payroll, job costing and audit support for contractors, manufacturers and service businesses.">
+  <meta name="keywords" content="bookkeeping, Chartered Accountant, accounting advisory, management consultancy, payroll, job costing, QuickBooks, Xero, audit">
+  <meta name="author" content="MT Professionals">
+  <meta property="og:title" content="MT Professionals | Accounting & Advisory">
+  <meta property="og:description" content="Financial clarity your business can actually act on.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>MT Professionals | Management Consultancy, Bookkeeping, Advisory & Audit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#1B2A4A;
+      --ink:#101A2E;
+      --navy-soft:#243A5C;
+      --gold:#B8863E;
+      --gold-light:#D3AA65;
+      --cream:#F6F3EC;
+      --cream-2:#F3EEE2;
+      --slate:#4A4A4A;
+      --muted:#7C8AA3;
+      --line:#E5E1D8;
+      --white:#fff;
+      --success:#28794d;
+      --max:1180px;
+      --radius:12px;
+      --shadow:0 18px 50px rgba(16,26,46,.10);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{
+      font-family:'Inter',sans-serif;color:var(--slate);background:#fff;
+      line-height:1.65;-webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    body.menu-open{overflow:hidden}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--navy);font-weight:700;line-height:1.2}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    img{max-width:100%;display:block}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+    section{padding:96px 0}
+    .skip-link{
+      position:fixed;left:16px;top:-60px;z-index:9999;background:var(--gold);
+      color:var(--ink);padding:10px 16px;border-radius:6px;font-weight:700;
+    }
+    .skip-link:focus{top:16px}
+    .eyebrow{
+      display:inline-block;margin-bottom:14px;font-size:12px;font-weight:800;
+      letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)
+    }
+    .ledger-rule{display:flex;flex-direction:column;gap:5px;width:90px;margin-bottom:22px}
+    .ledger-rule span{height:2px;background:var(--muted);opacity:.6}
+    .ledger-rule span.thick{height:5px;background:var(--gold);opacity:1;border-radius:3px}
+    .section-head{max-width:680px;margin-bottom:52px}
+    .section-head.center{text-align:center;margin-left:auto;margin-right:auto}
+    .section-head h2{font-size:38px;margin-bottom:14px}
+    .section-head p{font-size:16px;color:var(--slate)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      min-height:50px;padding:13px 24px;border-radius:6px;font-size:14px;
+      font-weight:700;border:1.5px solid transparent;transition:.25s ease;
+      white-space:nowrap;
+    }
+    .btn-primary{background:var(--navy);color:var(--cream-2);box-shadow:0 8px 20px rgba(16,26,46,.12)}
+    .btn-primary:hover{background:var(--ink);transform:translateY(-2px)}
+    .btn-primary:disabled{opacity:.65;cursor:wait;transform:none}
+    .btn-outline{border-color:rgba(255,255,255,.35);color:var(--cream-2)}
+    .btn-outline:hover{border-color:var(--gold-light);color:var(--gold-light)}
+    .btn-outline-navy{border-color:var(--navy);color:var(--navy)}
+    .btn-outline-navy:hover{background:var(--navy);color:var(--cream-2)}
+    .btn-gold{background:var(--gold);color:var(--ink)}
+    .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+
+    /* HEADER */
+    header{
+      position:fixed;inset:0 0 auto;z-index:1000;
+      background:rgba(16,26,46,.94);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.07)
+    }
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+    .brand-badge{
+      width:40px;height:40px;border-radius:9px;
+      background:linear-gradient(135deg,var(--navy-soft),var(--ink));
+      border:1px solid rgba(184,134,62,.55);display:grid;place-items:center;
+      color:var(--cream-2);font-family:'Playfair Display',serif;font-weight:800
+    }
+    .brand-name{font-family:'Playfair Display',serif;font-weight:700;color:var(--cream-2);font-size:20px}
+    .nav-links{display:flex;align-items:center;gap:28px;margin-left:auto}
+    .nav-links a{color:#CBD3E0;font-size:13.5px;font-weight:600;position:relative;padding:8px 0}
+    .nav-links a::after{
+      content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);
+      transition:.25s
+    }
+    .nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-cta{display:flex;align-items:center;gap:10px}
+    .nav-cta .btn{min-height:42px;padding:9px 17px;font-size:12.5px}
+    .menu-toggle{
+      display:none;width:44px;height:44px;border:1px solid rgba(255,255,255,.15);
+      border-radius:7px;background:transparent;align-items:center;justify-content:center;flex-direction:column;gap:5px
+    }
+    .menu-toggle span{display:block;width:21px;height:2px;background:var(--cream-2);transition:.25s}
+    .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* HERO */
+    .hero{
+      min-height:760px;padding:175px 0 110px;display:flex;align-items:center;
+      position:relative;overflow:hidden;background:
+      radial-gradient(circle at 85% 25%,rgba(184,134,62,.13),transparent 30%),
+      linear-gradient(135deg,var(--navy-soft),var(--ink))
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;opacity:.7;
+      background-image:repeating-linear-gradient(0deg,rgba(243,238,226,.045) 0 1px,transparent 1px 62px);
+      pointer-events:none
+    }
+    .hero::after{
+      content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(184,134,62,.12);
+      border-radius:50%;right:-170px;bottom:-220px;box-shadow:0 0 0 80px rgba(184,134,62,.025),0 0 0 160px rgba(184,134,62,.018)
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center;position:relative;z-index:1}
+    .hero h1{color:var(--cream-2);font-size:clamp(40px,5vw,58px);margin-bottom:22px;max-width:720px}
+    .hero h1 em{font-style:normal;color:var(--gold-light)}
+    .hero .lead{color:#B7C0D1;font-size:17px;max-width:620px;margin-bottom:32px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-stats{display:flex;gap:42px;margin-top:48px;flex-wrap:wrap}
+    .stat-num{font-family:'Playfair Display',serif;font-size:32px;color:var(--gold-light);font-weight:700}
+    .stat-label{font-size:11px;color:#8C96A8;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+    .hero-card{
+      background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;padding:34px;backdrop-filter:blur(10px);box-shadow:var(--shadow)
+    }
+    .hero-card h4{font-family:'Inter',sans-serif;color:var(--cream-2);font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+    .hero-card .mini-title{color:#8995AA;font-size:12px;margin-bottom:14px}
+    .hero-card li{display:flex;align-items:flex-start;gap:12px;color:#CBD3E0;font-size:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+    .hero-card li:last-child{border-bottom:0}
+    .check{color:var(--gold-light);font-weight:800;flex-shrink:0}
+
+    /* TRUST BAR */
+    .trust{padding:28px 0;border-bottom:1px solid var(--line);background:#fff}
+    .trust-row{display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}
+    .trust-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:800}
+    .trust-items{display:flex;gap:12px;flex-wrap:wrap}
+    .trust-item{padding:9px 15px;border:1px solid var(--line);border-radius:5px;color:var(--navy);font-size:12px;font-weight:700;background:#fff}
+
+    .feature-strip{padding:25px 0;background:#fff}
+    .feature-strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .feature-pill{
+      display:flex;align-items:center;gap:11px;padding:14px 15px;border:1px solid var(--line);
+      border-radius:8px;background:#fff
+    }
+    .feature-pill>span{
+      width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+      background:rgba(184,134,62,.12);color:var(--gold);font-weight:900;flex-shrink:0
+    }
+    .feature-pill strong{display:block;color:var(--navy);font-size:12px}
+    .feature-pill small{display:block;color:var(--muted);font-size:10.5px;margin-top:2px}
+
+    /* SERVICES */
+    .services{background:var(--cream)}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .service-card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;
+      transition:.25s ease;display:flex;flex-direction:column
+    }
+    .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(184,134,62,.35)}
+    .service-num{font-family:'Playfair Display',serif;font-size:14px;color:var(--gold);font-weight:800;letter-spacing:2px;margin-bottom:12px}
+    .service-card h3{font-size:21px;margin-bottom:10px}
+    .service-card p{font-size:13.5px;color:var(--slate);margin-bottom:16px}
+    .service-card ul{margin-top:auto}
+    .service-card li{font-size:12.5px;color:var(--slate);padding:6px 0 6px 16px;position:relative}
+    .service-card li::before{content:"";position:absolute;left:0;top:13px;width:5px;height:5px;background:var(--gold);border-radius:50%}
+
+    /* TOOLS */
+    .tools{padding:58px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .tools .wrap{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+    .tools-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:800}
+    .tool-badges{display:flex;gap:10px;flex-wrap:wrap}
+    .tool-badge{border:1px solid var(--line);border-radius:6px;padding:10px 17px;font-weight:700;color:var(--navy);font-size:13px;background:#fff}
+
+    /* INDUSTRIES */
+    .industries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .industry-card{padding:23px;border-radius:9px;background:var(--cream);border:1px solid var(--line);font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);font-size:16px;transition:.2s}
+    .industry-card:hover{border-color:rgba(184,134,62,.45);transform:translateY(-2px)}
+
+    /* WHY */
+    .why{background:var(--navy)}
+    .why .section-head h2{color:var(--cream-2)}
+    .why .section-head p{color:#B7C0D1}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+    .why-item{border-top:2px solid var(--gold);padding-top:20px}
+    .why-item h4{color:var(--cream-2);font-size:18px;margin-bottom:8px}
+    .why-item p{color:#AEB8CB;font-size:13.5px}
+
+    /* PROCESS */
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .process-step{position:relative;padding:10px 0}
+    .process-step:not(:last-child)::after{content:"→";position:absolute;right:-17px;top:28px;color:var(--gold);font-size:22px}
+    .process-num{font-family:'Playfair Display',serif;font-size:42px;-webkit-text-stroke:1.3px var(--gold);color:transparent;font-weight:800;display:block;margin-bottom:12px}
+    .process-step h4{font-size:17px;margin-bottom:7px}
+    .process-step p{font-size:13.5px;color:var(--slate)}
+
+    /* TESTIMONIALS / FAQ */
+    .testimonials{background:var(--cream)}
+    .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .quote-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px}
+    .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px}
+    .quote-card p{font-size:14px;color:var(--slate);margin-bottom:18px}
+    .quote-card strong{font-size:13px;color:var(--navy)}
+    .quote-card small{display:block;color:var(--muted);margin-top:2px}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .faq-item{border:1px solid var(--line);border-radius:8px;background:#fff;overflow:hidden}
+    .faq-item summary{cursor:pointer;padding:18px 20px;font-weight:700;color:var(--navy);list-style:none}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{content:"+";float:right;color:var(--gold);font-size:20px;line-height:1}
+    .faq-item[open] summary::after{content:"−"}
+    .faq-answer{padding:0 20px 18px;font-size:13.5px;color:var(--slate)}
+
+    /* CTA */
+    .cta-band{background:linear-gradient(135deg,var(--navy-soft),var(--ink));padding:78px 0;text-align:center}
+    .cta-band h2{color:var(--cream-2);font-size:36px;margin-bottom:12px}
+    .cta-band p{color:#B7C0D1;max-width:600px;margin:0 auto 26px;font-size:15px}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+    .contact-info h3{font-size:28px;margin-bottom:12px}
+    .contact-info>p{font-size:14px;color:var(--slate);margin-bottom:24px}
+    .contact-detail{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
+    .contact-detail .label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:800;min-width:100px}
+    .contact-detail .value{font-size:13.5px;color:var(--navy);font-weight:600}
+    .contact-detail a:hover{color:var(--gold)}
+    .contact-note{margin-top:22px;padding:15px 17px;background:var(--cream);border-left:3px solid var(--gold);font-size:12.5px;color:var(--slate)}
+    form{display:flex;flex-direction:column;gap:15px;padding:30px;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 40px rgba(16,26,46,.05)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px}
+    input,select,textarea{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:6px;font-size:13.5px;color:var(--slate);background:#fff;transition:.2s}
+    input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,134,62,.10)}
+    textarea{resize:vertical;min-height:125px}
+    .form-msg{display:none;font-size:13px;color:var(--success);font-weight:700;padding:12px;background:#eef8f1;border-radius:6px}
+    .form-msg.show{display:block}
+
+    /* FOOTER */
+    footer{background:var(--ink);color:#8C96A8;padding:58px 0 26px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:38px;margin-bottom:38px}
+    .footer-brand .brand-name{margin-bottom:12px}
+    .footer-brand p{font-size:12.5px;color:#7E8AA0;max-width:300px}
+    footer h5{color:var(--cream-2);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:13px;font-family:'Inter',sans-serif}
+    footer li{padding:5px 0}
+    footer li a,footer li span{font-size:12.5px;color:#9CA7BC}
+    footer li a:hover{color:var(--gold)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11.5px;color:#6E7A90}
+    .footer-links{display:flex;gap:15px}
+
+    /* FLOATING CONTACT */
+    .floating-contact{
+      position:fixed;right:20px;bottom:20px;z-index:900;display:flex;gap:8px;
+      transition:.25s ease
+    }
+    .back-top{
+      position:fixed;right:20px;bottom:78px;z-index:899;width:42px;height:42px;
+      border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;
+      place-items:center;background:var(--ink);color:var(--cream-2);
+      box-shadow:0 8px 24px rgba(16,26,46,.18);opacity:0;pointer-events:none;
+      transform:translateY(10px);transition:.25s ease
+    }
+    .back-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .back-top:hover{background:var(--gold);color:var(--ink)}
+    .reveal{
+      opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease
+    }
+    .reveal.revealed{opacity:1;transform:none}
+    .service-card,.industry-card,.quote-card,.why-item,.process-step{will-change:transform}
+    .service-card:focus-within,.industry-card:focus-within,.quote-card:focus-within{
+      outline:2px solid rgba(184,134,62,.45);outline-offset:3px
+    }
+    .float-btn{
+      width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+      background:var(--gold);color:var(--ink);font-weight:900;border:2px solid #fff;
+      box-shadow:0 8px 24px rgba(16,26,46,.22);transition:.2s
+    }
+    .float-btn:hover{transform:translateY(-3px);background:var(--gold-light)}
+
+    /* RESPONSIVE */
+    @media (max-width:1100px){
+      .nav-links{gap:18px}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      .hero-grid{gap:40px}
+    }
+    @media (max-width:900px){
+      .wrap{width:min(var(--max),calc(100% - 36px))}
+      section{padding:72px 0}
+      .nav-cta{display:none}
+      .menu-toggle{display:flex}
+      .nav-links{
+        position:fixed;left:0;right:0;top:78px;display:flex;flex-direction:column;
+        align-items:stretch;gap:0;background:rgba(16,26,46,.99);
+        border-top:1px solid rgba(255,255,255,.08);padding:10px 18px 18px;
+        transform:translateY(-140%);opacity:0;pointer-events:none;transition:.3s ease
+      }
+      .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+      .nav-links a{padding:14px 10px;border-bottom:1px solid rgba(255,255,255,.06)}
+      .nav-links a::after{display:none}
+      .hero{min-height:auto;padding:145px 0 82px}
+      .hero-grid{grid-template-columns:1fr}
+      .hero h1{font-size:clamp(38px,8vw,52px)}
+      .hero-card{max-width:680px}
+      .why-grid{grid-template-columns:1fr 1fr}
+      .process-grid{grid-template-columns:1fr 1fr}
+      .process-step:not(:last-child)::after{display:none}
+      .quote-grid{grid-template-columns:1fr 1fr}
+      .contact-grid{grid-template-columns:1fr;gap:38px}
+      .footer-grid{grid-template-columns:1.5fr 1fr 1fr}
+    }
+    @media (max-width:650px){
+      .wrap{width:calc(100% - 28px)}
+      section{padding:58px 0}
+      .brand-name{font-size:17px}
+      .brand-badge{width:36px;height:36px}
+      .section-head{margin-bottom:34px}
+      .section-head h2{font-size:30px}
+      .hero{padding-top:125px}
+      .hero h1{font-size:38px}
+      .hero .lead{font-size:15px}
+      .hero-actions .btn{width:100%}
+      .hero-stats{gap:24px;margin-top:34px}
+      .hero-card{padding:24px}
+      .trust-row{align-items:flex-start}
+      .trust-items{width:100%}
+      .trust-item{flex:1;text-align:center;min-width:120px}
+      .feature-strip-grid{grid-template-columns:1fr 1fr}
+      .service-grid,.industries-grid,.why-grid,.process-grid,.quote-grid,.faq-grid{grid-template-columns:1fr}
+      .service-card{padding:25px}
+      .tools .wrap{align-items:flex-start}
+      .tool-badges{width:100%}
+      .tool-badge{flex:1;text-align:center;min-width:130px}
+      .cta-band{padding:60px 0}
+      .cta-band h2{font-size:29px}
+      .form-row{grid-template-columns:1fr}
+      form{padding:21px}
+      .contact-detail{display:block}
+      .contact-detail .label{display:block;margin-bottom:4px}
+      .feature-strip-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+      .footer-brand{grid-column:1/-1}
+      .footer-bottom{flex-direction:column}
+      .floating-contact{right:14px;bottom:14px}
+    }
+    @media (max-width:400px){
+      .brand-name{font-size:15px}
+      .hero h1{font-size:34px}
+      .stat-num{font-size:28px}
+      .stat-label{font-size:9px}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-brand{grid-column:auto}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{transition:none!important;animation:none!important}
+      .reveal{opacity:1!important;transform:none!important}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"MT Professionals",
+    "description":"Management consultancy, bookkeeping, advisory and audit support.",
+    "email":"mailto:mtprofessionalsca@gmail.com",
+    "telephone":"+92 3252118083",
+    "serviceType":["Management Consultancy","Bookkeeping","Advisory","Audit"]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="MT Professionals home">
+        <span class="brand-badge" aria-hidden="true">MT</span>
+        <span class="brand-name">MT Professionals</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#why">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-outline">Book a Free Consultation</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Management Consultancy · Bookkeeping · Advisory · Audit</span>
+          <h1>Financial clarity your business can <em>actually act on.</em></h1>
+          <p class="lead">MT Professionals helps contractors, manufacturers, and service businesses keep accurate books, stay payroll-compliant, and see true job profitability — so every decision is backed by real numbers.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-gold">Book a Free Books Health-Check</a>
+            <a href="#services" class="btn btn-outline">Explore Services</a>
+          </div>
+          <div class="hero-stats" aria-label="Company highlights">
+            <div><div class="stat-num">4</div><div class="stat-label">Core Service Lines</div></div>
+            <div><div class="stat-num">9+</div><div class="stat-label">Industries Served</div></div>
+            <div><div class="stat-num">4</div><div class="stat-label">Platforms Supported</div></div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="What you get">
+          <h4>What you get</h4>
+          <div class="mini-title">A practical financial partner — not just another software operator.</div>
+          <ul>
+            <li><span class="check">✓</span><span>Accurate, reconciled books every month</span></li>
+            <li><span class="check">✓</span><span>Job costing that reflects real profitability</span></li>
+            <li><span class="check">✓</span><span>Payroll processed on time, every time</span></li>
+            <li><span class="check">✓</span><span>Financial reports you can actually read</span></li>
+            <li><span class="check">✓</span><span>A direct line to a Chartered Accountant</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Platforms">
+      <div class="wrap trust-row">
+        <span class="trust-label">Platforms we work in</span>
+        <div class="trust-items">
+          <span class="trust-item">QuickBooks Online</span>
+          <span class="trust-item">Xero</span>
+          <span class="trust-item">Gusto Payroll</span>
+          <span class="trust-item">Jobber</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-strip" aria-label="Key benefits">
+      <div class="wrap feature-strip-grid">
+        <div class="feature-pill"><span>✓</span><div><strong>Monthly Accuracy</strong><small>Reconciled books & reporting</small></div></div>
+        <div class="feature-pill"><span>✓</span><div><strong>CA-Led Support</strong><small>Professional financial guidance</small></div></div>
+        <div class="feature-pill"><span>✓</span><div><strong>Clear Reporting</strong><small>Numbers you can actually use</small></div></div>
+        <div class="feature-pill"><span>✓</span><div><strong>Fast Communication</strong><small>Reliable ongoing support</small></div></div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="eyebrow">What We Do</span>
+          <h2>Four service lines. One accurate set of books.</h2>
+          <p>From day-to-day bookkeeping to management consultancy, advisory, and audit support — everything is built around giving you numbers you can trust.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-num">01</div>
+            <h3>Management Consultancy</h3>
+            <p>Strategic guidance to help you run a tighter, more profitable operation.</p>
+            <ul><li>Budgeting & forecasting</li><li>Cash flow management</li><li>KPI dashboards & management reporting</li><li>Business process improvement</li></ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-num">02</div>
+            <h3>Bookkeeping</h3>
+            <p>Accurate, up-to-date books across QuickBooks Online and Xero.</p>
+            <ul><li>Setup, cleanup & catch-up bookkeeping</li><li>Bank & credit card reconciliations</li><li>Accounts payable & receivable</li><li>Job costing & WIP reporting</li></ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-num">03</div>
+            <h3>Advisory</h3>
+            <p>A Chartered Accountant's perspective on the decisions that matter.</p>
+            <ul><li>Financial statement analysis</li><li>Revenue recognition guidance</li><li>Project profitability review</li><li>Growth & structuring advice</li></ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-num">04</div>
+            <h3>Audit</h3>
+            <p>Independent review support to give your numbers external credibility.</p>
+            <ul><li>Financial statement review support</li><li>Internal controls assessment</li><li>Compliance & reporting support</li><li>Audit-readiness preparation</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Who We Serve</span>
+          <h2>Built for project-based & operational businesses</h2>
+          <p>Deep experience in industries where job costing and cash flow timing actually matter.</p>
+        </div>
+        <div class="industries-grid">
+          <div class="industry-card reveal">Construction & General Contractors</div>
+          <div class="industry-card reveal">Industrial Metal Fabrication</div>
+          <div class="industry-card reveal">Cabinetry & Millwork</div>
+          <div class="industry-card reveal">Manufacturing</div>
+          <div class="industry-card reveal">Home Improvement & Remodeling</div>
+          <div class="industry-card reveal">Real Estate & Property Management</div>
+          <div class="industry-card reveal">Professional Service Firms</div>
+          <div class="industry-card reveal">Startups & Small Businesses</div>
+          <div class="industry-card reveal">Consulting & Service-Based Businesses</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Why MT Professionals</span>
+          <h2>Accuracy-focused. Reliable. Built for long-term partnership.</h2>
+        </div>
+        <div class="why-grid">
+          <article class="why-item reveal"><h4>Chartered Accountant-Led</h4><p>Every engagement is grounded in strong accounting fundamentals and IFRS best practices, not just software know-how.</p></article>
+          <article class="why-item reveal"><h4>Detail-Oriented & Accurate</h4><p>We don't just close your books — we make sure every number reconciles and every job is costed correctly.</p></article>
+          <article class="why-item reveal"><h4>Proactive Communication</h4><p>You'll hear from us before something becomes a problem, not after — with reliable, timely delivery every month.</p></article>
+          <article class="why-item reveal"><h4>Industry-Specific Experience</h4><p>We understand job costing, WIP, and revenue recognition for project-based businesses — not generic bookkeeping.</p></article>
+          <article class="why-item reveal"><h4>Full-Stack Financial Support</h4><p>From day-to-day bookkeeping to management consultancy and audit support — one partner across your financial needs.</p></article>
+          <article class="why-item reveal"><h4>Committed to Long-Term Success</h4><p>We aim to be the financial partner that grows with your business, not just a monthly vendor.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="eyebrow">How We Work</span>
+          <h2>A simple, reliable onboarding process</h2>
+        </div>
+        <div class="process-grid">
+          <article class="process-step reveal"><span class="process-num">01</span><h4>Free Books Health-Check</h4><p>A 15-minute call to understand where your books and reporting stand today.</p></article>
+          <article class="process-step reveal"><span class="process-num">02</span><h4>Proposal & Engagement</h4><p>A clear scope, timeline, and pricing — no surprises, no jargon.</p></article>
+          <article class="process-step reveal"><span class="process-num">03</span><h4>Setup & Clean-Up</h4><p>We get your books, payroll, and job costing accurate and current.</p></article>
+          <article class="process-step reveal"><span class="process-num">04</span><h4>Ongoing Partnership</h4><p>Monthly close, reporting, and a direct line to us whenever you need it.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="eyebrow">Client Experience</span>
+          <h2>Professional support that stays focused on your numbers</h2>
+          <p>Use this section for verified client testimonials when you have them. The sample wording below should be replaced with real reviews before publishing.</p>
+        </div>
+        <div class="quote-grid">
+          <article class="quote-card reveal"><div class="stars">★★★★★</div><p>“Clear reporting and practical advice make it much easier to understand where our business is actually making money.”</p><strong>Client Testimonial</strong><small>Construction business</small></article>
+          <article class="quote-card reveal"><div class="stars">★★★★★</div><p>“The focus on reconciliations, job costing and timely reporting gives us confidence in every monthly close.”</p><strong>Client Testimonial</strong><small>Manufacturing business</small></article>
+          <article class="quote-card reveal"><div class="stars">★★★★★</div><p>“A professional, responsive approach with explanations we can actually use when making business decisions.”</p><strong>Client Testimonial</strong><small>Service business</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head center">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions business owners usually ask</h2>
+        </div>
+        <div class="faq-grid">
+          <details class="faq-item reveal"><summary>Can you clean up an existing set of books?</summary><div class="faq-answer">Yes. Cleanup and catch-up bookkeeping can be part of the onboarding process so your records are brought current before ongoing monthly work begins.</div></details>
+          <details class="faq-item reveal"><summary>Do you work with QuickBooks Online and Xero?</summary><div class="faq-answer">Yes. MT Professionals supports both QuickBooks Online and Xero, along with the other platforms listed on this website.</div></details>
+          <details class="faq-item reveal"><summary>Do you support job costing and WIP reporting?</summary><div class="faq-answer">Yes. Job costing and WIP reporting are specifically included in the bookkeeping service offering for project-based businesses.</div></details>
+          <details class="faq-item reveal"><summary>How do I get started?</summary><div class="faq-answer">Use the contact form to request a free books health-check. You can also contact MT Professionals directly using the email or phone number below.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>Ready to see your numbers clearly?</h2>
+        <p>Start with a free 15-minute books health-check — no pressure, just an honest look at where things stand.</p>
+        <a href="#contact" class="btn btn-gold">Book Your Free Consultation</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">Get In Touch</span>
+          <h3>Let's talk about your books</h3>
+          <p>Fill out the form or reach out directly — we typically respond within one business day.</p>
+
+          <div class="contact-detail"><div class="label">Email</div><div class="value"><a href="mailto:mtprofessionalsca@gmail.com">mtprofessionalsca@gmail.com</a></div></div>
+          <div class="contact-detail"><div class="label">Phone</div><div class="value"><a href="tel:+923252118083">+92 325 211 8083</a></div></div>
+          <div class="contact-detail"><div class="label">Services</div><div class="value">Management Consultancy · Bookkeeping · Advisory · Audit</div></div>
+          <div class="contact-detail"><div class="label">Response</div><div class="value">Within 1 business day</div></div>
+
+          <div class="contact-note"><strong>Private & simple:</strong> Submit the form directly. Your enquiry will be sent to MT Professionals without sending you back to the homepage.</div>
+        </div>
+
+        <form id="contactForm" action="https://formsubmit.co/ajax/mtprofessionalsca@gmail.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New Enquiry — MT Professionals Website">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <div class="form-row">
+            <div><label for="name">Full Name *</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+            <div><label for="company">Company Name</label><input type="text" id="company" name="company" autocomplete="organization"></div>
+          </div>
+          <div class="form-row">
+            <div><label for="email">Email *</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+            <div><label for="phone">Phone</label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+          </div>
+          <div>
+            <label for="service">Service Interested In</label>
+            <select id="service" name="service">
+              <option value="" selected disabled>Select a service</option>
+              <option>Management Consultancy</option><option>Bookkeeping</option><option>Advisory</option><option>Audit</option><option>Not sure yet</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Tell us about your business</label>
+            <textarea id="message" name="message" placeholder="What software do you use? What's your biggest bookkeeping challenge right now?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Send Enquiry <span aria-hidden="true">→</span></button>
+          <div class="form-msg" id="formMsg" role="status"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">MT Professionals</div>
+          <p>Management Consultancy, Bookkeeping, Advisory & Audit for contractors, manufacturers, and service businesses.</p>
+        </div>
+        <div><h5>Services</h5><ul><li><a href="#services">Management Consultancy</a></li><li><a href="#services">Bookkeeping</a></li><li><a href="#services">Advisory</a></li><li><a href="#services">Audit</a></li></ul></div>
+        <div><h5>Company</h5><ul><li><a href="#industries">Industries</a></li><li><a href="#why">Why Us</a></li><li><a href="#process">Process</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+        <div><h5>Platforms</h5><ul><li><span>QuickBooks Online</span></li><li><span>Xero</span></li><li><span>Gusto Payroll</span></li><li><span>Jobber</span></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MT Professionals. All rights reserved.</span>
+        <span class="footer-links"><a href="#contact">Contact</a><a href="#faq">FAQ</a><a href="#top">Back to top ↑</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-contact" aria-label="Quick contact">
+    <a class="float-btn" href="mailto:mtprofessionalsca@gmail.com" aria-label="Email MT Professionals" title="Email">✉</a>
+    <a class="float-btn" href="tel:+923252118083" aria-label="Call MT Professionals" title="Call">☎</a>
+    <a class="float-btn" href="https://wa.me/923252118083" target="_blank" rel="noopener" aria-label="WhatsApp MT Professionals" title="WhatsApp">W</a>
+  </div>
+  <a class="back-top" id="backTop" href="#top" aria-label="Back to top" title="Back to top">↑</a>
+
+  <script>
+    (() => {
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      const navItems = navLinks.querySelectorAll('a');
+
+      function closeMenu(){
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded','false');
+        menuToggle.setAttribute('aria-label','Open menu');
+        document.body.classList.remove('menu-open');
+      }
+
+      menuToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        document.body.classList.toggle('menu-open', open);
+      });
+
+      navItems.forEach(link => link.addEventListener('click', closeMenu));
+
+      document.addEventListener('keydown', e => {
+        if(e.key === 'Escape') closeMenu();
+      });
+
+      window.addEventListener('resize', () => {
+        if(window.innerWidth > 900) closeMenu();
+      });
+
+      // Scroll-reveal animations.
+      const revealItems = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.12});
+      revealItems.forEach((item, index) => {
+        item.style.transitionDelay = Math.min((index % 4) * 70, 210) + 'ms';
+        revealObserver.observe(item);
+      });
+
+      // Back-to-top button.
+      const backTop = document.getElementById('backTop');
+      const updateBackTop = () => backTop.classList.toggle('visible', window.scrollY > 600);
+      window.addEventListener('scroll', updateBackTop, {passive:true});
+      updateBackTop();
+
+      // Highlight the current section in the navigation.
+      const sections = document.querySelectorAll('main section[id]');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            navItems.forEach(link => link.classList.toggle(
+              'active',
+              link.getAttribute('href') === '#' + entry.target.id
+            ));
+          }
+        });
+      }, {rootMargin:'-35% 0px -55% 0px', threshold:0});
+      sections.forEach(section => observer.observe(section));
+
+      // Enquiry form: submits without navigating away from the page.
+      const form = document.getElementById('contactForm');
+      const msg = document.getElementById('formMsg');
+      const submitBtn = document.getElementById('submitBtn');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const data = new FormData(form);
+        if (String(data.get('_honey') || '').trim()) return;
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending…';
+        msg.classList.remove('show');
+        msg.textContent = '';
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (!response.ok) throw new Error('Submission failed');
+
+          form.reset();
+          msg.innerHTML = '<strong>✓ Enquiry sent successfully.</strong><br>Thank you. MT Professionals will contact you within one business day.';
+          msg.classList.add('show');
+        } catch (error) {
+          const emailBody = encodeURIComponent(
+            'New enquiry from MT Professionals website\n\n' +
+            'Name: ' + (data.get('name') || '') + '\n' +
+            'Company: ' + (data.get('company') || 'Not provided') + '\n' +
+            'Email: ' + (data.get('email') || '') + '\n' +
+            'Phone: ' + (data.get('phone') || 'Not provided') + '\n' +
+            'Service: ' + (data.get('service') || 'Not specified') + '\n\n' +
+            'Message:\n' + (data.get('message') || 'Not provided')
+          );
+          const emailLink = 'mailto:mtprofessionalsca@gmail.com?subject=' +
+            encodeURIComponent('New Website Enquiry — MT Professionals') + '&body=' + emailBody;
+          msg.innerHTML = '<strong>Automatic sending is unavailable.</strong><br><a href="' + emailLink + '">Click here to send this enquiry by email</a>.';
+          msg.classList.add('show');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Send Enquiry <span aria-hidden="true">→</span>';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
