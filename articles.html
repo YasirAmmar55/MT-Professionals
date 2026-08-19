@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101A2E">
+  <meta name="description" content="Practical accounting, bookkeeping and job-costing insights from MT Professionals — for contractors, manufacturers and service businesses.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.mtprofessionals.com/articles.html">
+  <title>Insights & Articles | MT Professionals</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101A2E'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%23D3AA65' text-anchor='middle'%3EMT%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root{
+      --navy:#1B2A4A; --ink:#101A2E; --navy-soft:#243A5C;
+      --gold:#B8863E; --gold-light:#D3AA65;
+      --cream:#F6F3EC; --cream-2:#F3EEE2;
+      --slate:#4A4A4A; --muted:#7C8AA3; --line:#E5E1D8; --white:#fff;
+      --max:1180px; --radius:12px; --shadow:0 18px 50px rgba(16,26,46,.10);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{font-family:'Inter',sans-serif;color:var(--slate);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body.menu-open{overflow:hidden}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--navy);font-weight:700;line-height:1.2}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    img{max-width:100%;display:block}
+    button{font:inherit;cursor:pointer}
+    .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+    .skip-link{position:fixed;left:16px;top:-60px;z-index:9999;background:var(--gold);color:var(--ink);padding:10px 16px;border-radius:6px;font-weight:700}
+    .skip-link:focus{top:16px}
+    .eyebrow{display:inline-block;margin-bottom:14px;font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:13px 24px;border-radius:6px;font-size:14px;font-weight:700;border:1.5px solid transparent;transition:.25s ease;white-space:nowrap}
+    .btn-gold{background:var(--gold);color:var(--cream-2)}
+    .btn-gold:hover{background:var(--gold-light);color:var(--ink);transform:translateY(-2px)}
+    .btn-outline{border-color:rgba(255,255,255,.35);color:var(--cream-2)}
+    .btn-outline:hover{border-color:var(--gold-light);color:var(--gold-light)}
+
+    /* HEADER (shared) */
+    header{position:fixed;inset:0 0 auto;z-index:1000;background:rgba(16,26,46,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .top-bar{display:flex;justify-content:flex-end;align-items:center;padding:6px 0;gap:16px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .top-bar .social-icons{display:flex;gap:12px;align-items:center}
+    .top-bar .social-icons a{color:rgba(255,255,255,.6);font-size:15px;transition:color .2s}
+    .top-bar .social-icons a:hover{color:var(--gold-light)}
+    .top-bar .social-icons .label{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.5px;margin-right:4px}
+    .nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+    .brand-badge{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--navy-soft),var(--ink));border:1px solid rgba(184,134,62,.55);display:grid;place-items:center;color:var(--cream-2);font-family:'Playfair Display',serif;font-weight:800;font-size:15px}
+    .brand-name{font-family:'Playfair Display',serif;font-weight:700;color:var(--cream-2);font-size:19px}
+    .nav-links{display:flex;align-items:center;gap:28px;margin-left:auto}
+    .nav-links a{color:#CBD3E0;font-size:13.5px;font-weight:600;position:relative;padding:8px 0}
+    .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:.25s}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-cta{display:flex;align-items:center;gap:10px}
+    .nav-cta .btn{min-height:38px;padding:8px 16px;font-size:12px}
+    .menu-toggle{display:none;width:40px;height:40px;border:1px solid rgba(255,255,255,.15);border-radius:7px;background:transparent;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+    .menu-toggle span{display:block;width:20px;height:2px;background:var(--cream-2);transition:.25s}
+    .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+    .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+    @media (max-width:900px){
+      .top-bar .social-icons .label{display:none}
+      .nav-cta{display:none}
+      .menu-toggle{display:flex}
+      .nav-links{position:fixed;left:0;right:0;top:calc(78px + 38px);display:flex;flex-direction:column;align-items:stretch;gap:0;background:rgba(16,26,46,.99);border-top:1px solid rgba(255,255,255,.08);padding:10px 18px 18px;transform:translateY(-140%);opacity:0;pointer-events:none;transition:.3s ease}
+      .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+      .nav-links a{padding:14px 10px;border-bottom:1px solid rgba(255,255,255,.06)}
+      .nav-links a::after{display:none}
+    }
+
+    /* PAGE HERO */
+    .page-hero{min-height:340px;padding:170px 0 60px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0b1424 0%,#1a2a4a 60%,#2c405e 100%)}
+    .page-hero::before{content:"";position:absolute;inset:0;opacity:.4;background-image:repeating-linear-gradient(0deg,rgba(243,238,226,.04) 0 1px,transparent 1px 62px);pointer-events:none}
+    .page-hero-inner{position:relative;z-index:2;max-width:700px}
+    .page-hero h1{color:var(--cream-2);font-size:clamp(34px,4.6vw,50px);margin-bottom:14px}
+    .page-hero p{color:#B7C0D1;font-size:16px}
+    .crumb{display:flex;gap:8px;align-items:center;font-size:12px;color:#8C96A8;margin-top:22px}
+    .crumb a{color:#CBD3E0;font-weight:600}
+    .crumb a:hover{color:var(--gold-light)}
+
+    /* FILTER BAR */
+    .filter-bar{padding:30px 0;border-bottom:1px solid var(--line);background:#fff;position:sticky;top:68px;z-index:90}
+    .filter-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .filter-chip{padding:9px 17px;border:1px solid var(--line);border-radius:30px;font-size:12.5px;font-weight:700;color:var(--navy);background:#fff;transition:.2s}
+    .filter-chip:hover{border-color:var(--gold-light)}
+    .filter-chip.active{background:var(--navy);color:var(--cream-2);border-color:var(--navy)}
+
+    /* FEATURED ARTICLE */
+    .featured{padding:64px 0 30px;background:#fff}
+    .featured-card{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .featured-card img{width:100%;height:100%;min-height:320px;object-fit:cover}
+    .featured-copy{padding:42px 44px;display:flex;flex-direction:column;justify-content:center;background:var(--cream)}
+    .tag{display:inline-block;padding:5px 12px;border-radius:20px;background:rgba(184,134,62,.12);color:var(--gold);font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;width:max-content}
+    .featured-copy h2{font-size:28px;margin-bottom:12px}
+    .featured-copy p{font-size:14.5px;color:var(--slate);margin-bottom:20px}
+    .meta-row{display:flex;gap:16px;align-items:center;font-size:12px;color:var(--muted);margin-bottom:22px}
+    .meta-row span{display:flex;align-items:center;gap:6px}
+
+    /* ARTICLE GRID */
+    .articles-section{padding:20px 0 96px;background:#fff}
+    .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .article-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:.35s cubic-bezier(.25,.46,.45,.94);display:flex;flex-direction:column}
+    .article-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(16,26,46,.10);border-color:var(--gold-light)}
+    .article-card img{width:100%;height:190px;object-fit:cover}
+    .article-body{padding:22px 22px 26px;display:flex;flex-direction:column;flex:1}
+    .article-body h3{font-size:18.5px;margin-bottom:10px;line-height:1.32}
+    .article-body p{font-size:13.5px;color:var(--slate);margin-bottom:18px;flex:1}
+    .article-foot{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+    .read-link{font-weight:800;color:var(--navy);font-size:12.5px;display:inline-flex;align-items:center;gap:6px}
+    .article-card:hover .read-link{color:var(--gold)}
+
+    /* NEWSLETTER CTA */
+    .cta-band{background:linear-gradient(135deg,var(--navy-soft),var(--ink));padding:70px 0;text-align:center}
+    .cta-band h2{color:var(--cream-2);font-size:32px;margin-bottom:12px}
+    .cta-band p{color:#B7C0D1;max-width:560px;margin:0 auto 26px;font-size:15px}
+
+    /* FOOTER (shared) */
+    footer{background:var(--ink);color:#8C96A8;padding:58px 0 26px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:38px;margin-bottom:38px}
+    .footer-brand .brand-name{margin-bottom:12px}
+    .footer-brand p{font-size:12.5px;color:#7E8AA0;max-width:300px}
+    footer h5{color:var(--cream-2);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:13px}
+    footer li{padding:5px 0}
+    footer li a,footer li span{font-size:12.5px;color:#9CA7BC}
+    footer li a:hover{color:var(--gold)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11.5px;color:#6E7A90}
+    .footer-links{display:flex;gap:15px}
+    .floating-contact{position:fixed;right:20px;bottom:20px;z-index:900;display:flex;gap:8px}
+    .back-top{position:fixed;right:20px;bottom:78px;z-index:899;width:42px;height:42px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--cream-2);box-shadow:0 8px 24px rgba(16,26,46,.18);opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s ease}
+    .back-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .back-top:hover{background:var(--gold);color:var(--ink)}
+    .float-btn{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink);font-weight:900;border:2px solid #fff;box-shadow:0 8px 24px rgba(16,26,46,.22);transition:.2s}
+    .float-btn:hover{transform:translateY(-3px);background:var(--gold-light)}
+    .email-float{background:#ea4335!important;color:#fff!important}.email-float:hover{background:#d93025!important}
+    .phone-float{background:#4285f4!important;color:#fff!important}.phone-float:hover{background:#3367d6!important}
+    .whatsapp-float{background:#25d366!important;color:#fff!important}.whatsapp-float:hover{background:#20ba5a!important}
+    .legal-links{text-align:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:#aeb6c5}
+    .legal-links a{color:#c7ced9;margin:0 8px}
+    .legal-links a:hover{color:var(--gold)}
+    .filter-chip{cursor:pointer;user-select:none}
+    .filter-chip:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+    .article-card.is-hidden{display:none!important}
+    .featured-card.is-hidden{display:none!important}
+    .article-card.filter-in{animation:filterIn .28s ease both}
+    @keyframes filterIn{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .empty-state{margin:30px 0;padding:42px 20px;text-align:center;border:1px dashed var(--line);border-radius:var(--radius);color:var(--slate)}
+    .empty-state i{font-size:28px;color:var(--gold);margin-bottom:10px}
+    .empty-state h3{color:var(--navy);margin-bottom:6px}
+    .empty-state p{font-size:13px}
+    .article-reader{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;pointer-events:none;transition:.25s ease}
+    .article-reader.open{opacity:1;visibility:visible;pointer-events:auto}
+    .reader-overlay{position:absolute;inset:0;background:rgba(10,16,28,.78);backdrop-filter:blur(7px)}
+    .reader-dialog{position:relative;z-index:2;width:min(900px,100%);max-height:calc(100vh - 48px);overflow:auto;background:#fff;border-radius:16px;box-shadow:0 30px 90px rgba(0,0,0,.3);transform:translateY(20px) scale(.98);transition:.25s ease}
+    .article-reader.open .reader-dialog{transform:none}
+    .reader-close{position:absolute;z-index:4;top:16px;right:16px;width:40px;height:40px;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(16,26,46,.82);color:#fff;display:grid;place-items:center;cursor:pointer}
+    .reader-close:hover{background:var(--gold);color:var(--navy)}
+    .reader-image-wrap{width:100%;height:310px;background:var(--cream)}
+    .reader-image-wrap img{width:100%;height:100%;object-fit:cover}
+    .reader-content{padding:38px 44px 42px}
+    .reader-content h2{font-size:34px;line-height:1.22;margin-bottom:14px}
+    .reader-body{color:var(--slate);font-size:15px;line-height:1.85}
+    .reader-body p{margin:0 0 17px}
+    .reader-body h3{font-size:20px;margin:28px 0 10px}
+    .reader-body ul{list-style:disc;padding-left:22px;margin:8px 0 20px}
+    .reader-body li{margin:7px 0}
+    .reader-bottom{border-top:1px solid var(--line);margin-top:30px;padding-top:22px}
+    body.reader-open{overflow:hidden}
+    @media(max-width:650px){
+      .reader-dialog{width:100%;max-height:94vh;border-radius:16px 16px 0 0}
+      .article-reader{padding:0;align-items:flex-end}
+      .reader-image-wrap{height:190px}
+      .reader-content{padding:28px 20px 30px}
+      .reader-content h2{font-size:27px}
+      .reader-body{font-size:14px;line-height:1.75}
+    }
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.revealed{opacity:1;transform:none}
+
+    @media (max-width:1000px){.article-grid{grid-template-columns:repeat(2,1fr)}.featured-card{grid-template-columns:1fr}.featured-card img{min-height:220px}}
+    @media (max-width:900px){.wrap{width:min(var(--max),calc(100% - 36px))}.page-hero{padding:145px 0 50px}.filter-bar{top:0}}
+    @media (max-width:650px){.article-grid{grid-template-columns:1fr}.featured-copy{padding:28px 24px}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column}.floating-contact{right:14px;bottom:14px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.reveal{opacity:1!important;transform:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap">
+      <div class="top-bar">
+        <div class="social-icons">
+          <span class="label">Follow us</span>
+          <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="MT Professionals home">
+        <span class="brand-badge" aria-hidden="true">MT</span>
+        <span class="brand-name">MT Professionals</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#industries">Industries</a>
+        <a href="index.html#why">Why Us</a>
+        <a href="articles.html" class="active">Articles</a>
+        <a href="admin.html">Admin</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="index.html#contact" class="btn btn-outline">Book a Free Consultation</a></div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap page-hero-inner">
+        <span class="eyebrow">Insights</span>
+        <h1>Articles on books, job costing & business finance</h1>
+        <p>Practical, no-jargon guidance for contractors, manufacturers and service businesses — written by a Chartered Accountant, not a software vendor.</p>
+        <div class="crumb"><a href="index.html">Home</a><span>/</span><span>Articles</span></div>
+      </div>
+    </section>
+
+    <section class="filter-bar">
+      <div class="wrap filter-row">
+        <button type="button" class="filter-chip active" data-filter="all">All</button>
+        <button type="button" class="filter-chip" data-filter="bookkeeping">Bookkeeping</button>
+        <button type="button" class="filter-chip" data-filter="job-costing">Job Costing</button>
+        <button type="button" class="filter-chip" data-filter="payroll">Payroll</button>
+        <button type="button" class="filter-chip" data-filter="advisory">Advisory</button>
+        <button type="button" class="filter-chip" data-filter="audit">Audit</button>
+      </div>
+    </section>
+
+    <section class="featured">
+      <div class="wrap">
+        <article class="featured-card reveal" id="featured-article" data-category="job-costing">
+          <img src="https://picsum.photos/seed/featured-article/800/600" alt="Job costing on a construction site">
+          <div class="featured-copy">
+            <span class="tag">Job Costing</span>
+            <h2>Why your job costing is lying to you (and how to fix it)</h2>
+            <p>Most contractors think they're profitable job-by-job — until reconciled numbers say otherwise. Here's how WIP reporting and proper cost allocation close that gap.</p>
+            <div class="meta-row">
+              <span><i class="fa-regular fa-calendar"></i> Aug 12, 2026</span>
+              <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+            </div>
+            <button type="button" class="btn btn-gold open-article" data-article="featured-article" style="width:max-content">Read Article</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="articles-section">
+      <div class="wrap">
+        <div class="article-grid">
+
+          <article class="article-card reveal" id="article-recon" data-category="bookkeeping">
+            <img src="https://picsum.photos/seed/article-recon/500/320" alt="Bank reconciliation">
+            <div class="article-body">
+              <span class="tag">Bookkeeping</span>
+              <h3>Monthly reconciliations: the five-minute habit that prevents year-end chaos</h3>
+              <p>A simple monthly routine in QuickBooks or Xero that keeps your books audit-ready all year round.</p>
+              <div class="article-foot">
+                <span>Aug 5, 2026</span>
+                <a href="#article-recon" class="read-link" data-article="article-recon">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card reveal" id="article-payroll" data-category="payroll">
+            <img src="https://picsum.photos/seed/article-payroll/500/320" alt="Payroll processing">
+            <div class="article-body">
+              <span class="tag">Payroll</span>
+              <h3>Gusto payroll checklist: avoiding the six most common compliance slips</h3>
+              <p>What to double-check before every pay run so filings, deductions and deadlines never slip through.</p>
+              <div class="article-foot">
+                <span>Jul 29, 2026</span>
+                <a href="#article-payroll" class="read-link" data-article="article-payroll">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card reveal" id="article-cashflow" data-category="advisory">
+            <img src="https://picsum.photos/seed/article-cashflow/500/320" alt="Cash flow forecasting">
+            <div class="article-body">
+              <span class="tag">Advisory</span>
+              <h3>Cash flow forecasting for project-based businesses</h3>
+              <p>Why revenue on paper and cash in the bank rarely match — and a forecasting model that closes the gap.</p>
+              <div class="article-foot">
+                <span>Jul 21, 2026</span>
+                <a href="#article-cashflow" class="read-link" data-article="article-cashflow">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card reveal" id="article-qbvsxero" data-category="bookkeeping">
+            <img src="https://picsum.photos/seed/article-qbvsxero/500/320" alt="QuickBooks and Xero comparison">
+            <div class="article-body">
+              <span class="tag">Bookkeeping</span>
+              <h3>QuickBooks Online vs. Xero: which fits your business in 2026</h3>
+              <p>A practical comparison for contractors and manufacturers, beyond the feature-list marketing copy.</p>
+              <div class="article-foot">
+                <span>Jul 14, 2026</span>
+                <a href="#article-qbvsxero" class="read-link" data-article="article-qbvsxero">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card reveal" id="article-auditready" data-category="audit">
+            <img src="https://picsum.photos/seed/article-auditready/500/320" alt="Audit readiness documents">
+            <div class="article-body">
+              <span class="tag">Audit</span>
+              <h3>Audit-readiness: the document trail most businesses are missing</h3>
+              <p>The internal controls and paper trail that turn an audit from a scramble into a formality.</p>
+              <div class="article-foot">
+                <span>Jul 6, 2026</span>
+                <a href="#article-auditready" class="read-link" data-article="article-auditready">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card reveal" id="article-wip" data-category="job-costing">
+            <img src="https://picsum.photos/seed/article-wip/500/320" alt="Work in progress reporting">
+            <div class="article-body">
+              <span class="tag">Job Costing</span>
+              <h3>Reading a WIP schedule: a plain-English guide for owners</h3>
+              <p>What over/under-billing actually means for your business, without the accounting-textbook language.</p>
+              <div class="article-foot">
+                <span>Jun 28, 2026</span>
+                <a href="#article-wip" class="read-link" data-article="article-wip">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <div id="emptyState" class="empty-state" hidden>
+          <i class="fa-regular fa-folder-open"></i>
+          <h3>No articles in this category yet</h3>
+          <p>Try another category to see more insights.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="article-reader" id="articleReader" aria-hidden="true">
+      <div class="reader-overlay" data-close-reader></div>
+      <article class="reader-dialog" role="dialog" aria-modal="true" aria-labelledby="readerTitle">
+        <button class="reader-close" type="button" aria-label="Close article" data-close-reader><i class="fa-solid fa-xmark"></i></button>
+        <div class="reader-image-wrap"><img id="readerImage" src="" alt=""></div>
+        <div class="reader-content">
+          <span class="tag" id="readerTag"></span>
+          <h2 id="readerTitle"></h2>
+          <div class="meta-row" id="readerMeta"></div>
+          <div class="reader-body" id="readerBody"></div>
+          <div class="reader-bottom"><button type="button" class="btn btn-gold" data-close-reader>Back to Articles</button></div>
+        </div>
+      </article>
+    </div>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>Want insights like this for your business?</h2>
+        <p>Book a free 15-minute books health-check and we'll show you exactly where your numbers stand.</p>
+        <a href="index.html#contact" class="btn btn-gold">Book Your Free Consultation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">MT Professionals</div>
+          <p>Management Consultancy, Bookkeeping, Advisory & Audit for contractors, manufacturers, and service businesses.</p>
+        </div>
+        <div>
+          <h5>Services</h5>
+          <ul><li><a href="index.html#services">Management Consultancy</a></li><li><a href="index.html#services">Bookkeeping</a></li><li><a href="index.html#services">Advisory</a></li><li><a href="index.html#services">Audit</a></li></ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul><li><a href="index.html#industries">Industries</a></li><li><a href="index.html#why">Why Us</a></li><li><a href="articles.html">Articles</a></li><li><a href="index.html#contact">Contact</a></li></ul>
+        </div>
+        <div>
+          <h5>Platforms</h5>
+          <ul><li><span>QuickBooks Online</span></li><li><span>Xero</span></li><li><span>Gusto Payroll</span></li><li><span>Jobber</span></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MT Professionals. All rights reserved.</span>
+        <span class="footer-links"><a href="index.html#contact">Contact</a><a href="#top">Back to top ↑</a></span>
+      </div>
+    </div>
+    <div class="legal-links">
+      <a href="#" onclick="alert('Add your verified Privacy Policy page before publishing.');return false;">Privacy Policy</a><span>•</span>
+      <a href="#" onclick="alert('Add your verified Terms page before publishing.');return false;">Terms & Conditions</a><span>•</span>
+      <a href="#" onclick="alert('Add your professional disclaimer before publishing.');return false;">Disclaimer</a>
+    </div>
+  </footer>
+
+  <div class="floating-contact" aria-label="Quick contact">
+    <a class="float-btn email-float" href="mailto:mtprofessionalsca@gmail.com" aria-label="Email MT Professionals" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+    <a class="float-btn phone-float" href="tel:+923252118083" aria-label="Call MT Professionals" title="Call"><i class="fa-solid fa-phone" aria-hidden="true"></i></a>
+    <a class="float-btn whatsapp-float" href="https://wa.me/923252118083" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp MT Professionals" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+  </div>
+  <a href="#top" id="backTop" class="back-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    (() => {
+      const SUPABASE_URL = 'https://ymoxasgedwfnntdostuv.supabase.co';
+      const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_A7tZUh2F41QLV0gPQNM_Ng_yvjYPbDH';
+      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      const navItems = navLinks.querySelectorAll('a');
+      function closeMenu(){navLinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Open menu');document.body.classList.remove('menu-open');}
+      menuToggle.addEventListener('click', () => {const open = navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded', String(open));menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');document.body.classList.toggle('menu-open', open);});
+      navItems.forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => {if(e.key === 'Escape') closeMenu();});
+      window.addEventListener('resize', () => {if(window.innerWidth > 900) closeMenu();});
+
+      const backTop = document.getElementById('backTop');
+      const updateBackTop = () => backTop.classList.toggle('visible', window.scrollY > 600);
+      window.addEventListener('scroll', updateBackTop, {passive:true});updateBackTop();
+
+      const chips = document.querySelectorAll('.filter-chip');
+      const articleGrid = document.querySelector('.article-grid');
+      const featuredArticle = document.getElementById('featured-article');
+      const emptyState = document.getElementById('emptyState');
+      const articleReader = document.getElementById('articleReader');
+      const readerTitle = document.getElementById('readerTitle');
+      const readerTag = document.getElementById('readerTag');
+      const readerMeta = document.getElementById('readerMeta');
+      const readerBody = document.getElementById('readerBody');
+      const readerImage = document.getElementById('readerImage');
+      let articles = [];
+      let activeFilter = 'all';
+
+      const categoryNames = {
+        'bookkeeping':'Bookkeeping','job-costing':'Job Costing','payroll':'Payroll','advisory':'Advisory','audit':'Audit'
+      };
+
+      function escapeHtml(value){
+        return String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]));
+      }
+      function categoryName(value){ return categoryNames[value] || value || 'Insights'; }
+      function formatDate(value){
+        if(!value) return '';
+        const d = new Date(value);
+        if(Number.isNaN(d.getTime())) return '';
+        return d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+      }
+      function imageFor(article){ return article.image_url || `https://picsum.photos/seed/${encodeURIComponent(article.slug || article.id)}/800/500`; }
+
+      function renderFeatured(article){
+        if(!featuredArticle) return;
+        if(!article){ featuredArticle.classList.add('is-hidden'); return; }
+        featuredArticle.classList.remove('is-hidden');
+        featuredArticle.dataset.category = article.category || '';
+        featuredArticle.dataset.articleId = article.id;
+        featuredArticle.innerHTML = `
+          <img src="${escapeHtml(imageFor(article))}" alt="${escapeHtml(article.title)}" onerror="this.src='https://picsum.photos/seed/fallback/800/600'">
+          <div class="featured-copy">
+            <span class="tag">${escapeHtml(categoryName(article.category))}</span>
+            <h2>${escapeHtml(article.title)}</h2>
+            <p>${escapeHtml(article.excerpt || '')}</p>
+            <div class="meta-row">
+              <span><i class="fa-regular fa-calendar"></i> ${escapeHtml(formatDate(article.published_at || article.created_at))}</span>
+              <span><i class="fa-regular fa-clock"></i> ${escapeHtml(article.read_time ? article.read_time + ' min read' : '')}</span>
+            </div>
+            <button type="button" class="btn btn-gold open-article" data-article-id="${escapeHtml(article.id)}" style="width:max-content">Read Article</button>
+          </div>`;
+      }
+
+      function renderCards(){
+        if(!articleGrid) return;
+        const featured = articles.find(a => a.featured) || articles[0] || null;
+        renderFeatured(featured);
+        const cards = articles.filter(a => !featured || String(a.id) !== String(featured.id));
+        articleGrid.innerHTML = cards.map(article => `
+          <article class="article-card reveal" data-category="${escapeHtml(article.category || '')}" data-article-id="${escapeHtml(article.id)}">
+            <img src="${escapeHtml(imageFor(article))}" alt="${escapeHtml(article.title)}" onerror="this.src='https://picsum.photos/seed/fallback-card/500/320'">
+            <div class="article-body">
+              <span class="tag">${escapeHtml(categoryName(article.category))}</span>
+              <h3>${escapeHtml(article.title)}</h3>
+              <p>${escapeHtml(article.excerpt || '')}</p>
+              <div class="article-foot">
+                <span>${escapeHtml(formatDate(article.published_at || article.created_at))}</span>
+                <a href="#" class="read-link" data-article-id="${escapeHtml(article.id)}">Read <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>`).join('');
+
+        document.querySelectorAll('.reveal').forEach((item,index)=>{
+          item.style.transitionDelay = Math.min((index%3)*80,240)+'ms';
+          item.classList.add('revealed');
+        });
+        bindReaders();
+        applyFilter(activeFilter);
+      }
+
+      function applyFilter(filter){
+        activeFilter = (filter || 'all').toLowerCase();
+        let visible = 0;
+        document.querySelectorAll('.article-card').forEach(card => {
+          const show = activeFilter === 'all' || card.dataset.category === activeFilter;
+          card.classList.toggle('is-hidden', !show);
+          if(show) visible++;
+        });
+        if(featuredArticle){
+          const showFeatured = !featuredArticle.classList.contains('is-hidden') && (activeFilter === 'all' || featuredArticle.dataset.category === activeFilter);
+          featuredArticle.classList.toggle('is-hidden', !showFeatured);
+          if(showFeatured) visible++;
+        }
+        if(emptyState) emptyState.hidden = visible !== 0;
+      }
+
+      chips.forEach(chip => chip.addEventListener('click', () => {
+        chips.forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        applyFilter(chip.dataset.filter);
+      }));
+
+      function bindReaders(){
+        document.querySelectorAll('[data-article-id]').forEach(el => {
+          el.addEventListener('click', e => {
+            if(el.tagName === 'A') e.preventDefault();
+            openArticle(el.dataset.articleId);
+          });
+        });
+      }
+
+      function openArticle(id){
+        const data = articles.find(a => String(a.id) === String(id));
+        if(!data || !articleReader) return;
+        readerTitle.textContent = data.title || '';
+        readerTag.textContent = categoryName(data.category);
+        readerImage.src = imageFor(data);
+        readerImage.alt = data.title || '';
+        readerMeta.innerHTML = '<span><i class="fa-regular fa-calendar"></i> '+escapeHtml(formatDate(data.published_at || data.created_at))+'</span><span><i class="fa-regular fa-clock"></i> '+escapeHtml(data.read_time ? data.read_time+' min read' : '')+'</span>';
+        readerBody.innerHTML = data.content || '<p>No article content available.</p>';
+        articleReader.classList.add('open');
+        articleReader.setAttribute('aria-hidden','false');
+        document.body.classList.add('reader-open');
+        articleReader.querySelector('.reader-dialog').scrollTop=0;
+      }
+      function closeArticle(){
+        if(!articleReader) return;
+        articleReader.classList.remove('open');
+        articleReader.setAttribute('aria-hidden','true');
+        document.body.classList.remove('reader-open');
+      }
+      document.querySelectorAll('[data-close-reader]').forEach(el=>el.addEventListener('click',closeArticle));
+      document.addEventListener('keydown',e=>{if(e.key==='Escape') closeArticle();});
+
+      async function loadArticles(){
+        if(articleGrid) articleGrid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:#7C8AA3">Loading articles...</div>';
+        const {data,error} = await supabase.from('articles').select('*').eq('status','published').order('published_at',{ascending:false,nullsFirst:false}).order('created_at',{ascending:false});
+        if(error){
+          console.error(error);
+          if(articleGrid) articleGrid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:#B42318">Unable to load articles right now.</div>';
+          return;
+        }
+        articles = data || [];
+        renderCards();
+      }
+
+      loadArticles();
+    })();
+  </script>
+</body>
+</html>

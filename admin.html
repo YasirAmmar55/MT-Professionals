@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MT Professionals admin dashboard">
+  <title>Admin | MT Professionals</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Supabase browser client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    :root{
+      --navy:#1B2A4A; --ink:#101A2E; --navy-soft:#243A5C;
+      --gold:#B8863E; --gold-light:#D3AA65;
+      --cream:#F6F3EC; --slate:#4A4A4A; --muted:#7C8AA3;
+      --line:#E5E1D8; --white:#fff; --danger:#B42318;
+      --success:#067647; --shadow:0 18px 50px rgba(16,26,46,.10);
+      --max:1180px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,sans-serif;color:var(--slate);background:#f7f7f5;line-height:1.55}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .login-wrap{min-height:100vh;display:grid;place-items:center;padding:24px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+    .login-card{width:min(440px,100%);padding:36px}
+    .brand{font-family:"Playfair Display",serif;color:var(--navy);font-size:27px;font-weight:800;margin-bottom:6px}
+    .eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+    h1,h2,h3{font-family:"Playfair Display",serif;color:var(--navy)}
+    h1{font-size:32px}
+    h2{font-size:23px}
+    .muted{color:var(--muted);font-size:13px}
+    .field{margin-top:18px}
+    label{display:block;font-size:12px;font-weight:800;color:var(--navy);margin-bottom:7px}
+    input,textarea,select{
+      width:100%;border:1px solid #d8d4cb;border-radius:8px;padding:12px 13px;
+      background:#fff;color:var(--ink);outline:none;
+    }
+    input:focus,textarea:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,134,62,.12)}
+    textarea{min-height:180px;resize:vertical}
+    .btn{border:0;border-radius:7px;padding:11px 17px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    .btn-gold{background:var(--gold);color:#fff}
+    .btn-gold:hover{background:var(--gold-light);color:var(--ink)}
+    .btn-dark{background:var(--navy);color:#fff}
+    .btn-light{background:#f1efe9;color:var(--navy)}
+    .btn-danger{background:#fff0ee;color:var(--danger);border:1px solid #f0c7c2}
+    .btn:disabled{opacity:.55;cursor:not-allowed}
+    .full{width:100%;margin-top:22px}
+    .error{margin-top:14px;padding:11px 13px;background:#fff0ee;color:var(--danger);border-radius:8px;font-size:13px;display:none}
+    .success{margin-top:14px;padding:11px 13px;background:#ecfdf3;color:var(--success);border-radius:8px;font-size:13px;display:none}
+
+    .app{display:none;min-height:100vh}
+    header{background:var(--ink);color:#fff}
+    .top{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .top .brand{color:#fff;font-size:22px;margin:0}
+    .top-right{display:flex;align-items:center;gap:12px}
+    .user-email{font-size:12px;color:#b7c0d1}
+    main{padding:34px 0 70px}
+    .toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+    .actions{display:flex;gap:9px;flex-wrap:wrap}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+    .stat{padding:18px}
+    .stat strong{display:block;font-size:27px;color:var(--navy);font-family:"Playfair Display",serif}
+    .stat span{font-size:12px;color:var(--muted)}
+    .table-card{overflow:hidden}
+    .table-scroll{overflow:auto}
+    table{width:100%;border-collapse:collapse;min-width:760px}
+    th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:middle}
+    th{font-size:11px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);background:#faf9f6}
+    td.title{font-weight:700;color:var(--navy);max-width:330px}
+    .badge{display:inline-block;padding:5px 9px;border-radius:20px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+    .badge-published{background:#ecfdf3;color:var(--success)}
+    .badge-draft{background:#fff8e7;color:#946200}
+    .badge-other{background:#eef2f7;color:#53657d}
+    .row-actions{display:flex;gap:7px;flex-wrap:wrap}
+    .row-actions button{padding:7px 10px;font-size:11px}
+    .empty{text-align:center;padding:45px 20px;color:var(--muted)}
+    .loading{text-align:center;padding:35px;color:var(--muted)}
+    .form-card{display:none;padding:26px;margin-bottom:24px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+    .span-2{grid-column:1/-1}
+    .form-actions{display:flex;gap:9px;margin-top:20px;flex-wrap:wrap}
+    .hidden{display:none!important}
+    @media(max-width:760px){
+      .stats{grid-template-columns:1fr}
+      .top{padding:10px 0}
+      .user-email{display:none}
+      .form-grid{grid-template-columns:1fr}
+      .span-2{grid-column:auto}
+      .login-card{padding:27px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section class="login-wrap" id="loginScreen">
+    <div class="card login-card">
+      <div class="eyebrow">MT Professionals</div>
+      <div class="brand">Admin Login</div>
+      <p class="muted">Sign in to manage website articles.</p>
+
+      <form id="loginForm">
+        <div class="field">
+          <label for="loginEmail">Email</label>
+          <input id="loginEmail" type="email" autocomplete="email" required>
+        </div>
+
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" type="password" autocomplete="current-password" required>
+        </div>
+
+        <button class="btn btn-gold full" id="loginBtn" type="submit">Login</button>
+        <div class="error" id="loginError"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ADMIN APP -->
+  <div class="app" id="adminApp">
+    <header>
+      <div class="wrap top">
+        <div class="brand">MT Professionals <span style="font-family:Inter;font-size:11px;color:#8c96a8;font-weight:600">ADMIN</span></div>
+        <div class="top-right">
+          <span class="user-email" id="userEmail"></span>
+          <button class="btn btn-light" id="logoutBtn" type="button">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <div class="toolbar">
+          <div>
+            <div class="eyebrow">Content Management</div>
+            <h1>Articles</h1>
+            <p class="muted">Create, edit, publish and delete website articles.</p>
+          </div>
+          <div class="actions">
+            <button class="btn btn-gold" id="newArticleBtn" type="button">+ New Article</button>
+            <button class="btn btn-light" id="refreshBtn" type="button">Refresh</button>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="card stat"><strong id="totalCount">0</strong><span>Total articles</span></div>
+          <div class="card stat"><strong id="publishedCount">0</strong><span>Published</span></div>
+          <div class="card stat"><strong id="draftCount">0</strong><span>Drafts / other</span></div>
+        </div>
+
+        <section class="card form-card" id="formCard">
+          <div class="eyebrow">Article Editor</div>
+          <h2 id="formTitle">New Article</h2>
+
+          <form id="articleForm">
+            <input id="articleId" type="hidden">
+
+            <div class="form-grid">
+              <div class="field span-2">
+                <label for="title">Title *</label>
+                <input id="title" required>
+              </div>
+
+              <div class="field">
+                <label for="slug">Slug *</label>
+                <input id="slug" required placeholder="example-article-title">
+              </div>
+
+              <div class="field">
+                <label for="category">Category *</label>
+                <select id="category" required>
+                  <option value="">Select category</option>
+                  <option value="bookkeeping">Bookkeeping</option>
+                  <option value="job-costing">Job Costing</option>
+                  <option value="payroll">Payroll</option>
+                  <option value="advisory">Advisory</option>
+                  <option value="audit">Audit</option>
+                </select>
+              </div>
+
+              <div class="field span-2">
+                <label for="excerpt">Excerpt</label>
+                <textarea id="excerpt" style="min-height:100px" placeholder="Short summary shown on article cards."></textarea>
+              </div>
+
+              <div class="field span-2">
+                <label for="content">Content *</label>
+                <textarea id="content" required placeholder="Write the article content here."></textarea>
+              </div>
+
+              <div class="field">
+                <label for="imageUrl">Image URL</label>
+                <input id="imageUrl" type="url" placeholder="https://...">
+              </div>
+
+              <div class="field">
+                <label for="author">Author</label>
+                <input id="author" placeholder="MT Professionals">
+              </div>
+
+              <div class="field">
+                <label for="readTime">Read Time (minutes)</label>
+                <input id="readTime" type="number" min="1" placeholder="5">
+              </div>
+
+              <div class="field">
+                <label for="featured">Featured</label>
+                <select id="featured">
+                  <option value="false">No</option>
+                  <option value="true">Yes</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="status">Status</label>
+                <select id="status">
+                  <option value="draft">Draft</option>
+                  <option value="published">Published</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="success" id="formSuccess"></div>
+            <div class="error" id="formError"></div>
+
+            <div class="form-actions">
+              <button class="btn btn-gold" id="saveBtn" type="submit">Save Article</button>
+              <button class="btn btn-light" id="cancelBtn" type="button">Cancel</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="card table-card">
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                  <th>Updated</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="articleRows">
+                <tr><td colspan="5" class="loading">Loading articles...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+<script>
+(() => {
+  /*
+    IMPORTANT:
+    Replace these two placeholders with your Supabase project's
+    Project URL and anon/public key.
+
+    Supabase Dashboard:
+    Project Settings -> API
+  */
+  const SUPABASE_URL = 'https://ymoxasgedwfnntdostuv.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_A7tZUh2F41QLV0gPQNM_Ng_yvjYPbDH';
+
+  const ADMIN_UID = 'd9ea3e68-ae7b-4daf-8548-c61c3eea30c4';
+
+  if (SUPABASE_URL.includes('YOUR_') || SUPABASE_ANON_KEY.includes('YOUR_')) {
+    document.querySelector('#loginError').textContent =
+      'Supabase configuration missing. Add your Project URL and anon/public key in admin.html first.';
+    document.querySelector('#loginError').style.display = 'block';
+  }
+
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const $ = id => document.getElementById(id);
+  const loginScreen = $('loginScreen');
+  const adminApp = $('adminApp');
+  const loginError = $('loginError');
+  const formCard = $('formCard');
+  const formError = $('formError');
+  const formSuccess = $('formSuccess');
+
+  function showError(el, message) {
+    el.textContent = message || 'Something went wrong.';
+    el.style.display = 'block';
+  }
+
+  function hideMessage(el) {
+    el.style.display = 'none';
+    el.textContent = '';
+  }
+
+  function showApp(user) {
+    loginScreen.style.display = 'none';
+    adminApp.style.display = 'block';
+    $('userEmail').textContent = user.email || '';
+    loadArticles();
+  }
+
+  function showLogin() {
+    adminApp.style.display = 'none';
+    loginScreen.style.display = 'grid';
+  }
+
+  async function verifyAdmin(user) {
+    if (!user || user.id !== ADMIN_UID) {
+      await supabase.auth.signOut();
+      showError(loginError, 'This account is not authorized to access the admin dashboard.');
+      return false;
+    }
+    return true;
+  }
+
+  async function checkSession() {
+    const { data, error } = await supabase.auth.getSession();
+    if (error || !data.session) {
+      showLogin();
+      return;
+    }
+
+    if (await verifyAdmin(data.session.user)) {
+      showApp(data.session.user);
+    }
+  }
+
+  $('loginForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    hideMessage(loginError);
+
+    const btn = $('loginBtn');
+    btn.disabled = true;
+    btn.textContent = 'Signing in...';
+
+    const email = $('loginEmail').value.trim();
+    const password = $('loginPassword').value;
+
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    btn.disabled = false;
+    btn.textContent = 'Login';
+
+    if (error) {
+      showError(loginError, error.message);
+      return;
+    }
+
+    if (await verifyAdmin(data.user)) {
+      showApp(data.user);
+    }
+  });
+
+  $('logoutBtn').addEventListener('click', async () => {
+    await supabase.auth.signOut();
+    resetForm();
+    showLogin();
+  });
+
+  $('newArticleBtn').addEventListener('click', () => {
+    resetForm();
+    formCard.style.display = 'block';
+    $('formTitle').textContent = 'New Article';
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  $('cancelBtn').addEventListener('click', () => {
+    formCard.style.display = 'none';
+    resetForm();
+  });
+
+  $('refreshBtn').addEventListener('click', loadArticles);
+
+  function slugify(text) {
+    return text.toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  }
+
+  $('title').addEventListener('blur', () => {
+    if (!$('articleId').value && !$('slug').value) {
+      $('slug').value = slugify($('title').value);
+    }
+  });
+
+  $('articleForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    hideMessage(formError);
+    hideMessage(formSuccess);
+
+    const saveBtn = $('saveBtn');
+    saveBtn.disabled = true;
+    saveBtn.textContent = 'Saving...';
+
+    const id = $('articleId').value.trim();
+
+    const article = {
+      title: $('title').value.trim(),
+      slug: $('slug').value.trim(),
+      category: $('category').value,
+      excerpt: $('excerpt').value.trim() || null,
+      content: $('content').value.trim(),
+      image_url: $('imageUrl').value.trim() || null,
+      author: $('author').value.trim() || null,
+      read_time: $('readTime').value ? Number($('readTime').value) : null,
+      featured: $('featured').value === 'true',
+      status: $('status').value,
+      updated_at: new Date().toISOString()
+    };
+
+    if (article.status === 'published') {
+      article.published_at = new Date().toISOString();
+    }
+
+    let result;
+
+    if (id) {
+      result = await supabase.from('articles').update(article).eq('id', id);
+    } else {
+      article.created_at = new Date().toISOString();
+      result = await supabase.from('articles').insert(article);
+    }
+
+    saveBtn.disabled = false;
+    saveBtn.textContent = 'Save Article';
+
+    if (result.error) {
+      showError(formError, result.error.message);
+      return;
+    }
+
+    showSuccess('Article saved successfully.');
+    resetForm();
+    formCard.style.display = 'none';
+    await loadArticles();
+  });
+
+  function showSuccess(message) {
+    formSuccess.textContent = message;
+    formSuccess.style.display = 'block';
+  }
+
+  function resetForm() {
+    $('articleForm').reset();
+    $('articleId').value = '';
+    $('featured').value = 'false';
+    $('status').value = 'draft';
+    hideMessage(formError);
+    hideMessage(formSuccess);
+    $('formTitle').textContent = 'New Article';
+  }
+
+  async function loadArticles() {
+    $('articleRows').innerHTML = '<tr><td colspan="5" class="loading">Loading articles...</td></tr>';
+
+    const { data, error } = await supabase
+      .from('articles')
+      .select('*')
+      .order('updated_at', { ascending: false, nullsFirst: false })
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      $('articleRows').innerHTML =
+        '<tr><td colspan="5" class="empty">Could not load articles: ' +
+        escapeHtml(error.message) + '</td></tr>';
+      return;
+    }
+
+    const articles = data || [];
+    $('totalCount').textContent = articles.length;
+    $('publishedCount').textContent = articles.filter(a => a.status === 'published').length;
+    $('draftCount').textContent = articles.filter(a => a.status !== 'published').length;
+
+    if (!articles.length) {
+      $('articleRows').innerHTML = '<tr><td colspan="5" class="empty">No articles yet. Click “New Article” to create one.</td></tr>';
+      return;
+    }
+
+    $('articleRows').innerHTML = articles.map(article => `
+      <tr>
+        <td class="title">${escapeHtml(article.title || '')}</td>
+        <td>${escapeHtml(article.category || '')}</td>
+        <td>
+          <span class="badge ${article.status === 'published' ? 'badge-published' : article.status === 'draft' ? 'badge-draft' : 'badge-other'}">
+            ${escapeHtml(article.status || 'unknown')}
+          </span>
+        </td>
+        <td>${formatDate(article.updated_at || article.created_at)}</td>
+        <td>
+          <div class="row-actions">
+            <button class="btn btn-light" type="button" data-edit="${article.id}">Edit</button>
+            <button class="btn btn-danger" type="button" data-delete="${article.id}">Delete</button>
+          </div>
+        </td>
+      </tr>
+    `).join('');
+
+    document.querySelectorAll('[data-edit]').forEach(btn => {
+      btn.addEventListener('click', () => editArticle(btn.dataset.edit, articles));
+    });
+
+    document.querySelectorAll('[data-delete]').forEach(btn => {
+      btn.addEventListener('click', () => deleteArticle(btn.dataset.delete));
+    });
+  }
+
+  function editArticle(id, articles) {
+    const article = articles.find(a => String(a.id) === String(id));
+    if (!article) return;
+
+    $('articleId').value = article.id;
+    $('title').value = article.title || '';
+    $('slug').value = article.slug || '';
+    $('category').value = article.category || '';
+    $('excerpt').value = article.excerpt || '';
+    $('content').value = article.content || '';
+    $('imageUrl').value = article.image_url || '';
+    $('author').value = article.author || '';
+    $('readTime').value = article.read_time ?? '';
+    $('featured').value = String(article.featured ?? false);
+    $('status').value = article.status || 'draft';
+
+    $('formTitle').textContent = 'Edit Article';
+    formCard.style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  async function deleteArticle(id) {
+    const confirmed = window.confirm('Delete this article permanently?');
+    if (!confirmed) return;
+
+    const { error } = await supabase.from('articles').delete().eq('id', id);
+
+    if (error) {
+      alert('Delete failed: ' + error.message);
+      return;
+    }
+
+    await loadArticles();
+  }
+
+  function formatDate(value) {
+    if (!value) return '—';
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return '—';
+    return d.toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'});
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll('&','&amp;')
+      .replaceAll('<','&lt;')
+      .replaceAll('>','&gt;')
+      .replaceAll('"','&quot;')
+      .replaceAll("'","&#039;");
+  }
+
+  supabase.auth.onAuthStateChange(async (_event, session) => {
+    if (!session) {
+      showLogin();
+      return;
+    }
+    if (session.user.id === ADMIN_UID) {
+      showApp(session.user);
+    }
+  });
+
+  checkSession();
+})();
+</script>
+</body>
+</html>
