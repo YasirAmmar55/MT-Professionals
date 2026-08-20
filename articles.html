@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101A2E">
+  <meta name="theme-color" content="#111827">
   <meta name="description" content="Practical accounting, bookkeeping and job-costing insights from MT Professionals — for contractors, manufacturers and service businesses.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.mtprofessionals.com/articles.html">
   <title>Insights & Articles | MT Professionals</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101A2E'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%23D3AA65' text-anchor='middle'%3EMT%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%2314B8A6' text-anchor='middle'%3EMT%3C/text%3E%3C/svg%3E">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     :root{
-      --navy:#1B2A4A; --ink:#101A2E; --navy-soft:#243A5C;
-      --gold:#B8863E; --gold-light:#D3AA65;
-      --cream:#F6F3EC; --cream-2:#F3EEE2;
-      --slate:#4A4A4A; --muted:#7C8AA3; --line:#E5E1D8; --white:#fff;
-      --max:1180px; --radius:12px; --shadow:0 18px 50px rgba(16,26,46,.10);
+      --navy:#1F2937; --ink:#111827; --navy-soft:#374151;
+      --gold:#0D9488; --gold-light:#14B8A6;
+      --cream:#F8FAFC; --cream-2:#F8FAFC;
+      --slate:#4B5563; --muted:#6B7280; --line:#E5E7EB; --white:#fff;
+      --max:1180px; --radius:12px; --shadow:0 18px 50px rgba(17,24,39,.10);
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;scroll-padding-top:88px}
@@ -43,7 +43,7 @@
     .btn-outline:hover{border-color:var(--gold-light);color:var(--gold-light)}
 
     /* HEADER (shared) */
-    header{position:fixed;inset:0 0 auto;z-index:1000;background:rgba(16,26,46,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
+    header{position:fixed;inset:0 0 auto;z-index:1000;background:rgba(17,24,39,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
     .top-bar{display:flex;justify-content:flex-end;align-items:center;padding:6px 0;gap:16px;border-bottom:1px solid rgba(255,255,255,.06)}
     .top-bar .social-icons{display:flex;gap:12px;align-items:center}
     .top-bar .social-icons a{color:rgba(255,255,255,.6);font-size:15px;transition:color .2s}
@@ -51,7 +51,7 @@
     .top-bar .social-icons .label{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.5px;margin-right:4px}
     .nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:22px}
     .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
-    .brand-badge{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--navy-soft),var(--ink));border:1px solid rgba(184,134,62,.55);display:grid;place-items:center;color:var(--cream-2);font-family:'Playfair Display',serif;font-weight:800;font-size:15px}
+    .brand-badge{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--navy-soft),var(--ink));border:1px solid rgba(13,148,136,.55);display:grid;place-items:center;color:var(--cream-2);font-family:'Playfair Display',serif;font-weight:800;font-size:15px}
     .brand-name{font-family:'Playfair Display',serif;font-weight:700;color:var(--cream-2);font-size:19px}
     .nav-links{display:flex;align-items:center;gap:28px;margin-left:auto}
     .nav-links a{color:#CBD3E0;font-size:13.5px;font-weight:600;position:relative;padding:8px 0}
@@ -69,15 +69,15 @@
       .top-bar .social-icons .label{display:none}
       .nav-cta{display:none}
       .menu-toggle{display:flex}
-      .nav-links{position:fixed;left:0;right:0;top:calc(78px + 38px);display:flex;flex-direction:column;align-items:stretch;gap:0;background:rgba(16,26,46,.99);border-top:1px solid rgba(255,255,255,.08);padding:10px 18px 18px;transform:translateY(-140%);opacity:0;pointer-events:none;transition:.3s ease}
+      .nav-links{position:fixed;left:0;right:0;top:calc(78px + 38px);display:flex;flex-direction:column;align-items:stretch;gap:0;background:rgba(17,24,39,.99);border-top:1px solid rgba(255,255,255,.08);padding:10px 18px 18px;transform:translateY(-140%);opacity:0;pointer-events:none;transition:.3s ease}
       .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
       .nav-links a{padding:14px 10px;border-bottom:1px solid rgba(255,255,255,.06)}
       .nav-links a::after{display:none}
     }
 
     /* PAGE HERO */
-    .page-hero{min-height:340px;padding:170px 0 60px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0b1424 0%,#1a2a4a 60%,#2c405e 100%)}
-    .page-hero::before{content:"";position:absolute;inset:0;opacity:.4;background-image:repeating-linear-gradient(0deg,rgba(243,238,226,.04) 0 1px,transparent 1px 62px);pointer-events:none}
+    .page-hero{min-height:340px;padding:170px 0 60px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#111827 0%,#1F2937 60%,#374151 100%)}
+    .page-hero::before{content:"";position:absolute;inset:0;opacity:.4;background-image:repeating-linear-gradient(0deg,rgba(248,250,252,.04) 0 1px,transparent 1px 62px);pointer-events:none}
     .page-hero-inner{position:relative;z-index:2;max-width:700px}
     .page-hero h1{color:var(--cream-2);font-size:clamp(34px,4.6vw,50px);margin-bottom:14px}
     .page-hero p{color:#B7C0D1;font-size:16px}
@@ -97,7 +97,7 @@
     .featured-card{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
     .featured-card img{width:100%;height:100%;min-height:320px;object-fit:cover}
     .featured-copy{padding:42px 44px;display:flex;flex-direction:column;justify-content:center;background:var(--cream)}
-    .tag{display:inline-block;padding:5px 12px;border-radius:20px;background:rgba(184,134,62,.12);color:var(--gold);font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;width:max-content}
+    .tag{display:inline-block;padding:5px 12px;border-radius:20px;background:rgba(13,148,136,.12);color:var(--gold);font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;width:max-content}
     .featured-copy h2{font-size:28px;margin-bottom:12px}
     .featured-copy p{font-size:14.5px;color:var(--slate);margin-bottom:20px}
     .meta-row{display:flex;gap:16px;align-items:center;font-size:12px;color:var(--muted);margin-bottom:22px}
@@ -107,7 +107,7 @@
     .articles-section{padding:20px 0 96px;background:#fff}
     .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
     .article-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:.35s cubic-bezier(.25,.46,.45,.94);display:flex;flex-direction:column}
-    .article-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(16,26,46,.10);border-color:var(--gold-light)}
+    .article-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(17,24,39,.10);border-color:var(--gold-light)}
     .article-card img{width:100%;height:190px;object-fit:cover}
     .article-body{padding:22px 22px 26px;display:flex;flex-direction:column;flex:1}
     .article-body h3{font-size:18.5px;margin-bottom:10px;line-height:1.32}
@@ -133,10 +133,10 @@
     .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11.5px;color:#6E7A90}
     .footer-links{display:flex;gap:15px}
     .floating-contact{position:fixed;right:20px;bottom:20px;z-index:900;display:flex;gap:8px}
-    .back-top{position:fixed;right:20px;bottom:78px;z-index:899;width:42px;height:42px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--cream-2);box-shadow:0 8px 24px rgba(16,26,46,.18);opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s ease}
+    .back-top{position:fixed;right:20px;bottom:78px;z-index:899;width:42px;height:42px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--cream-2);box-shadow:0 8px 24px rgba(17,24,39,.18);opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s ease}
     .back-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
     .back-top:hover{background:var(--gold);color:var(--ink)}
-    .float-btn{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink);font-weight:900;border:2px solid #fff;box-shadow:0 8px 24px rgba(16,26,46,.22);transition:.2s}
+    .float-btn{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink);font-weight:900;border:2px solid #fff;box-shadow:0 8px 24px rgba(17,24,39,.22);transition:.2s}
     .float-btn:hover{transform:translateY(-3px);background:var(--gold-light)}
     .email-float{background:#ea4335!important;color:#fff!important}.email-float:hover{background:#d93025!important}
     .phone-float{background:#4285f4!important;color:#fff!important}.phone-float:hover{background:#3367d6!important}
@@ -159,7 +159,7 @@
     .reader-overlay{position:absolute;inset:0;background:rgba(10,16,28,.78);backdrop-filter:blur(7px)}
     .reader-dialog{position:relative;z-index:2;width:min(900px,100%);max-height:calc(100vh - 48px);overflow:auto;background:#fff;border-radius:16px;box-shadow:0 30px 90px rgba(0,0,0,.3);transform:translateY(20px) scale(.98);transition:.25s ease}
     .article-reader.open .reader-dialog{transform:none}
-    .reader-close{position:absolute;z-index:4;top:16px;right:16px;width:40px;height:40px;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(16,26,46,.82);color:#fff;display:grid;place-items:center;cursor:pointer}
+    .reader-close{position:absolute;z-index:4;top:16px;right:16px;width:40px;height:40px;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(17,24,39,.82);color:#fff;display:grid;place-items:center;cursor:pointer}
     .reader-close:hover{background:var(--gold);color:var(--navy)}
     .reader-image-wrap{width:100%;height:310px;background:var(--cream)}
     .reader-image-wrap img{width:100%;height:100%;object-fit:cover}
@@ -211,6 +211,7 @@
         <a href="index.html#services">Services</a>
         <a href="index.html#industries">Industries</a>
         <a href="index.html#why">Why Us</a>
+        <a href="Our Work.html">Our Work</a>
         <a href="articles.html" class="active">Articles</a>
         
         <a href="index.html#contact">Contact</a>
@@ -564,7 +565,7 @@
       document.addEventListener('keydown',e=>{if(e.key==='Escape') closeArticle();});
 
       async function loadArticles(){
-        if(articleGrid) articleGrid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:#7C8AA3">Loading articles...</div>';
+        if(articleGrid) articleGrid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:#6B7280">Loading articles...</div>';
         const {data,error} = await supabase.from('articles').select('*').eq('status','published').order('published_at',{ascending:false,nullsFirst:false}).order('created_at',{ascending:false});
         if(error){
           console.error(error);

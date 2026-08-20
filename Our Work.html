@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101A2E">
+  <meta name="theme-color" content="#111827">
   <meta name="description" content="MT Professionals — Our Work. Explore selected ongoing and completed projects and engagements.">
   <title>Our Work | MT Professionals</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101A2E'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%23D3AA65' text-anchor='middle'%3EMT%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%2314B8A6' text-anchor='middle'%3EMT%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -14,21 +14,21 @@
 
   <style>
     :root{
-      --navy:#1B2A4A;
-      --ink:#101A2E;
-      --navy-soft:#243A5C;
-      --gold:#B8863E;
-      --gold-light:#D3AA65;
-      --cream:#F6F3EC;
-      --cream-2:#F3EEE2;
-      --slate:#4A4A4A;
-      --muted:#7C8AA3;
-      --line:#E5E1D8;
+      --navy:#1F2937;
+      --ink:#111827;
+      --navy-soft:#374151;
+      --gold:#0D9488;
+      --gold-light:#14B8A6;
+      --cream:#F8FAFC;
+      --cream-2:#F8FAFC;
+      --slate:#4B5563;
+      --muted:#6B7280;
+      --line:#E5E7EB;
       --white:#fff;
       --success:#28794d;
       --max:1180px;
       --radius:12px;
-      --shadow:0 18px 50px rgba(16,26,46,.10);
+      --shadow:0 18px 50px rgba(17,24,39,.10);
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -57,7 +57,7 @@
       position:fixed;
       inset:0 0 auto;
       z-index:1000;
-      background:rgba(16,26,46,.96);
+      background:rgba(17,24,39,.96);
       backdrop-filter:blur(14px);
       border-bottom:1px solid rgba(255,255,255,.07);
     }
@@ -91,7 +91,7 @@
     .brand-badge{
       width:38px;height:38px;border-radius:9px;
       background:linear-gradient(135deg,var(--navy-soft),var(--ink));
-      border:1px solid rgba(184,134,62,.55);
+      border:1px solid rgba(13,148,136,.55);
       display:grid;place-items:center;
       color:var(--cream-2);
       font-family:'Playfair Display',serif;
@@ -142,20 +142,20 @@
       padding:175px 0 105px;
       position:relative;
       overflow:hidden;
-      background:linear-gradient(135deg,#0b1424 0%,#1a2a4a 60%,#2c405e 100%);
+      background:linear-gradient(135deg,#111827 0%,#1F2937 60%,#374151 100%);
     }
     .hero::before{
       content:"";position:absolute;inset:0;opacity:.35;
       background-image:repeating-linear-gradient(
-        0deg,rgba(243,238,226,.04) 0 1px,transparent 1px 62px
+        0deg,rgba(248,250,252,.04) 0 1px,transparent 1px 62px
       );
     }
     .hero::after{
       content:"";position:absolute;width:460px;height:460px;
-      border:1px solid rgba(184,134,62,.12);border-radius:50%;
+      border:1px solid rgba(13,148,136,.12);border-radius:50%;
       right:-170px;bottom:-220px;
-      box-shadow:0 0 0 80px rgba(184,134,62,.025),
-                 0 0 0 160px rgba(184,134,62,.018);
+      box-shadow:0 0 0 80px rgba(13,148,136,.025),
+                 0 0 0 160px rgba(13,148,136,.018);
       animation:spin 30s linear infinite;
     }
     @keyframes spin{to{transform:rotate(360deg)}}
@@ -226,7 +226,7 @@
       width:10px;height:10px;border-radius:50%;
       background:#28794d;box-shadow:0 0 0 5px rgba(40,121,77,.10);
     }
-    .status-dot.completed{background:var(--gold);box-shadow:0 0 0 5px rgba(184,134,62,.10)}
+    .status-dot.completed{background:var(--gold);box-shadow:0 0 0 5px rgba(13,148,136,.10)}
 
     .project-grid{
       display:grid;
@@ -244,7 +244,7 @@
     .project-card:hover{
       transform:translateY(-7px);
       border-color:var(--gold-light);
-      box-shadow:0 20px 42px rgba(16,26,46,.11);
+      box-shadow:0 20px 42px rgba(17,24,39,.11);
     }
     .project-top{
       height:180px;
@@ -255,7 +255,7 @@
     .project-top::before{
       content:"";
       position:absolute;width:240px;height:240px;border-radius:50%;
-      border:1px solid rgba(211,170,101,.18);
+      border:1px solid rgba(20,184,166,.18);
       right:-85px;bottom:-125px;
     }
     .project-top::after{
@@ -268,7 +268,7 @@
       position:relative;z-index:2;
       width:68px;height:68px;border-radius:16px;
       display:grid;place-items:center;
-      border:1px solid rgba(211,170,101,.45);
+      border:1px solid rgba(20,184,166,.45);
       background:rgba(255,255,255,.07);
       color:var(--gold-light);font-size:27px;
     }
@@ -339,7 +339,7 @@
       width:46px;height:46px;border-radius:50%;
       display:grid;place-items:center;
       color:#fff;font-weight:900;border:2px solid #fff;
-      box-shadow:0 8px 24px rgba(16,26,46,.22);
+      box-shadow:0 8px 24px rgba(17,24,39,.22);
       transition:.2s;
     }
     .float-btn:hover{transform:translateY(-3px)}
@@ -356,7 +356,7 @@
       .nav-links{
         position:fixed;left:0;right:0;top:107px;
         flex-direction:column;align-items:stretch;gap:0;
-        background:rgba(16,26,46,.99);
+        background:rgba(17,24,39,.99);
         border-top:1px solid rgba(255,255,255,.08);
         padding:10px 18px 18px;
         transform:translateY(-140%);opacity:0;

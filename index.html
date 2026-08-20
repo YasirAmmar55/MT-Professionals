@@ -29,22 +29,38 @@
   
   <style>
     :root{
-      --navy:#1B2A4A;
-      --ink:#101A2E;
-      --navy-soft:#243A5C;
-      --gold:#B8863E;
-      --gold-light:#D3AA65;
-      --cream:#F6F3EC;
-      --cream-2:#F3EEE2;
-      --slate:#4A4A4A;
-      --muted:#7C8AA3;
-      --line:#E5E1D8;
-      --white:#fff;
-      --success:#28794d;
-      --max:1180px;
-      --radius:12px;
-      --shadow:0 18px 50px rgba(16,26,46,.10);
-    }
+  --charcoal:#1F2937;
+  --charcoal-dark:#111827;
+  --charcoal-soft:#374151;
+
+  --teal:#0D9488;
+  --teal-light:#14B8A6;
+  --teal-dark:#0F766E;
+
+  --off-white:#F8FAFC;
+  --off-white-2:#F1F5F9;
+
+  --navy:#1F2937;
+  --ink:#111827;
+  --navy-soft:#374151;
+
+  --gold:#0D9488;
+  --gold-light:#14B8A6;
+
+  --cream:#F8FAFC;
+  --cream-2:#F8FAFC;
+
+  --slate:#4B5563;
+  --muted:#6B7280;
+  --line:#E5E7EB;
+  --white:#fff;
+
+  --success:#28794d;
+
+  --max:1180px;
+  --radius:12px;
+  --shadow:0 18px 50px rgba(31,41,55,.10);
+}
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;scroll-padding-top:88px}
@@ -479,6 +495,596 @@
     .modal-body{padding:26px 30px 30px}
     .modal-body form{padding:0;border:0;box-shadow:none;gap:15px}
     @media (max-width:650px){.modal-head{padding:22px 20px 16px}.modal-body{padding:20px}.modal-head h3{font-size:20px}}
+  /* =========================================================
+   MT PROFESSIONALS — CHARCOAL / TEAL / OFF-WHITE THEME
+   ========================================================= */
+
+/* GLOBAL */
+body{
+  color:#4B5563;
+  background:#fff;
+}
+
+h1,h2,h3,h4{
+  color:#1F2937;
+}
+
+/* GOLD → TEAL */
+.eyebrow{
+  color:#0D9488;
+}
+
+.btn-gold{
+  background:#0D9488;
+  color:#F8FAFC;
+  border-color:#0D9488;
+}
+
+.btn-gold:hover{
+  background:#14B8A6;
+  border-color:#14B8A6;
+  color:#111827;
+}
+
+.btn-primary{
+  background:#1F2937;
+  color:#F8FAFC;
+}
+
+.btn-primary:hover{
+  background:#111827;
+}
+
+/* HEADER */
+header{
+  background:rgba(31,41,55,.96);
+  border-bottom:1px solid rgba(13,148,136,.16);
+}
+
+.top-bar{
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.top-bar .social-icons a:hover{
+  color:#14B8A6;
+}
+
+.brand-badge{
+  background:linear-gradient(
+    135deg,
+    #374151,
+    #111827
+  );
+  border-color:rgba(13,148,136,.65);
+  color:#F8FAFC;
+}
+
+.brand-name{
+  color:#F8FAFC;
+}
+
+.nav-links a{
+  color:#CBD5E1;
+}
+
+.nav-links a::after{
+  background:#0D9488;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color:#14B8A6;
+}
+
+.btn-outline{
+  border-color:rgba(248,250,252,.35);
+  color:#F8FAFC;
+}
+
+.btn-outline:hover{
+  border-color:#0D9488;
+  color:#14B8A6;
+}
+
+/* MOBILE MENU */
+@media(max-width:900px){
+  .nav-links{
+    background:rgba(17,24,39,.99);
+    border-top-color:rgba(13,148,136,.18);
+  }
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+  background:
+    linear-gradient(
+      135deg,
+      #111827 0%,
+      #1F2937 55%,
+      #374151 100%
+    );
+}
+
+.hero-glow{
+  background:
+    radial-gradient(
+      circle at 30% 50%,
+      rgba(13,148,136,.18) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 75% 80%,
+      rgba(20,184,166,.10) 0%,
+      transparent 50%
+    );
+}
+
+.hero::before{
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(248,250,252,.035) 0 1px,
+      transparent 1px 62px
+    );
+}
+
+.hero::after{
+  border-color:rgba(13,148,136,.14);
+  box-shadow:
+    0 0 0 80px rgba(13,148,136,.025),
+    0 0 0 160px rgba(13,148,136,.018);
+}
+
+.particle{
+  background:rgba(13,148,136,.28);
+}
+
+.hero h1{
+  color:#F8FAFC;
+}
+
+.hero h1 .type-wrap .cursor{
+  background:#14B8A6;
+}
+
+.hero .lead{
+  color:#CBD5E1;
+}
+
+.hero-card{
+  background:rgba(248,250,252,.055);
+  border-color:rgba(248,250,252,.12);
+}
+
+.hero-card h4{
+  color:#F8FAFC;
+}
+
+.hero-card .mini-title{
+  color:#9CA3AF;
+}
+
+.hero-card li{
+  color:#CBD5E1;
+  border-bottom-color:rgba(248,250,252,.08);
+}
+
+.check{
+  color:#14B8A6;
+}
+
+.stat-num{
+  color:#14B8A6;
+}
+
+.stat-label{
+  color:#9CA3AF;
+}
+
+/* =========================================================
+   TRUST / FEATURE STRIP
+   ========================================================= */
+
+.trust{
+  background:#fff;
+  border-bottom-color:#E5E7EB;
+}
+
+.trust-label{
+  color:#6B7280;
+}
+
+.trust-item{
+  border-color:#E5E7EB;
+  color:#1F2937;
+}
+
+.feature-pill{
+  border-color:#E5E7EB;
+}
+
+.feature-pill > span{
+  background:rgba(13,148,136,.10);
+  color:#0D9488;
+}
+
+.feature-pill strong{
+  color:#1F2937;
+}
+
+.feature-pill small{
+  color:#6B7280;
+}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.services{
+  background:#F8FAFC;
+}
+
+.service-card{
+  border-color:#E5E7EB;
+  box-shadow:0 4px 12px rgba(31,41,55,.05);
+}
+
+.service-card:hover{
+  border-color:#0D9488;
+  box-shadow:0 20px 40px rgba(31,41,55,.12);
+}
+
+.service-content{
+  background:#fff;
+}
+
+.service-num{
+  color:#0D9488;
+}
+
+.service-card h3{
+  color:#1F2937;
+}
+
+.service-card .service-content p{
+  color:#4B5563;
+}
+
+.service-card .service-overlay{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(17,24,39,.98),
+      rgba(31,41,55,.97)
+    );
+}
+
+.service-overlay h3{
+  color:#F8FAFC;
+}
+
+.service-overlay ul li{
+  color:#F8FAFC;
+  border-bottom-color:rgba(248,250,252,.10);
+}
+
+.service-overlay ul li::before{
+  color:#14B8A6;
+}
+
+/* =========================================================
+   INDUSTRIES
+   ========================================================= */
+
+.industry-card{
+  background:#F8FAFC;
+  border-color:#E5E7EB;
+  color:#1F2937;
+}
+
+.industry-card:hover{
+  border-color:rgba(13,148,136,.55);
+}
+
+/* =========================================================
+   WHY US
+   ========================================================= */
+
+.why{
+  background:#1F2937;
+}
+
+.why .section-head h2{
+  color:#F8FAFC;
+}
+
+.why .section-head p{
+  color:#CBD5E1;
+}
+
+.why-item{
+  border-top-color:#0D9488;
+}
+
+.why-item h4{
+  color:#F8FAFC;
+}
+
+.why-item p{
+  color:#CBD5E1;
+}
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.process-num{
+  -webkit-text-stroke:1.3px #0D9488;
+}
+
+.process-step h4{
+  color:#1F2937;
+}
+
+.process-step p{
+  color:#4B5563;
+}
+
+.process-step:not(:last-child)::after{
+  color:#0D9488;
+}
+
+/* =========================================================
+   TESTIMONIALS
+   ========================================================= */
+
+.testimonials{
+  background:#F8FAFC;
+}
+
+.quote-card{
+  background:#fff;
+  border-color:#E5E7EB;
+}
+
+.stars{
+  color:#0D9488;
+}
+
+.quote-card strong{
+  color:#1F2937;
+}
+
+.quote-card small{
+  color:#6B7280;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta-band{
+  background:
+    linear-gradient(
+      135deg,
+      #374151,
+      #111827
+    );
+}
+
+.cta-band h2{
+  color:#F8FAFC;
+}
+
+.cta-band p{
+  color:#CBD5E1;
+}
+
+/* =========================================================
+   PREMIUM BAND
+   ========================================================= */
+
+.premium-band{
+  background:#1F2937;
+}
+
+.premium-band-grid{
+  background:rgba(13,148,136,.18);
+}
+
+.premium-stat{
+  background:#1F2937;
+}
+
+.premium-stat strong{
+  color:#F8FAFC;
+}
+
+.premium-stat span{
+  color:#CBD5E1;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-premium{
+  background:#fff;
+}
+
+.about-copy h2{
+  color:#1F2937;
+}
+
+.about-copy p{
+  color:#6B7280;
+}
+
+.about-check{
+  color:#374151;
+}
+
+.about-check i{
+  color:#0D9488;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-info h3{
+  color:#1F2937;
+}
+
+.contact-info > p{
+  color:#4B5563;
+}
+
+.contact-detail{
+  border-bottom-color:#E5E7EB;
+}
+
+.contact-detail .label{
+  color:#6B7280;
+}
+
+.contact-detail .value{
+  color:#1F2937;
+}
+
+.contact-detail a:hover{
+  color:#0D9488;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:#0D9488;
+  box-shadow:0 0 0 3px rgba(13,148,136,.10);
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal-overlay{
+  background:rgba(17,24,39,.78);
+}
+
+.modal-head h3{
+  color:#1F2937;
+}
+
+.modal-close{
+  color:#1F2937;
+}
+
+.modal-close:hover{
+  background:#1F2937;
+  color:#F8FAFC;
+  border-color:#1F2937;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+  background:#111827;
+}
+
+footer h5{
+  color:#F8FAFC;
+}
+
+footer li a:hover{
+  color:#14B8A6;
+}
+
+.footer-bottom{
+  border-top-color:rgba(248,250,252,.08);
+}
+
+.legal-links{
+  border-top-color:rgba(248,250,252,.10);
+}
+
+.legal-links a:hover{
+  color:#14B8A6;
+}
+
+/* =========================================================
+   FLOATING BUTTONS
+   ========================================================= */
+
+.float-btn{
+  border-color:#fff;
+}
+
+.email-float{
+  background:#ea4335 !important;
+  color:#fff !important;
+}
+
+.email-float:hover{
+  background:#d93025 !important;
+}
+
+.phone-float{
+  background:#4285f4 !important;
+  color:#fff !important;
+}
+
+.phone-float:hover{
+  background:#3367d6 !important;
+}
+
+.whatsapp-float{
+  background:#25d366 !important;
+  color:#fff !important;
+}
+
+/* BACK TO TOP */
+.back-top{
+  background:#1F2937;
+  color:#F8FAFC;
+}
+
+.back-top:hover{
+  background:#0D9488;
+  color:#fff;
+}
+
+/* FORM */
+.action-btn.email-btn{
+  background:#1F2937;
+  border-color:#1F2937;
+}
+
+.action-btn.email-btn:hover{
+  background:#111827;
+}
+
+.action-btn.whatsapp-btn{
+  background:#25D366;
+  border-color:#25D366;
+}
+
+/* SUCCESS MESSAGE */
+.form-msg.success{
+  background:#ECFDF5;
+  border-color:#A7F3D0;
+  color:#065F46;
+}
+
+/* SECTION EYEBROWS */
+.section-head .eyebrow,
+.about-premium .eyebrow{
+  color:#0D9488 !important;
+}
   </style>
   <script type="application/ld+json">
   {
@@ -683,7 +1289,7 @@
           <h3>Let's talk about your books</h3>
           <p>Open the enquiry form or reach out directly — we typically respond within one business day.</p>
           <div class="contact-detail"><div class="label">Email</div><div class="value"><a href="mailto:mtprofessionalsca@gmail.com">mtprofessionalsca@gmail.com</a></div></div>
-          <div class="contact-detail"><div class="label">Phone</div><div class="value"><a href="tel:+923252118083">+92 325 211 8083</a></div></div>
+          <div class="contact-detail"><div class="label">Phone</div><div class="value"><a href="tel:+923496633129">+92 3496633129</a></div></div>
           <div class="contact-detail"><div class="label">Services</div><div class="value">Management Consultancy · Bookkeeping · Advisory · Audit</div></div>
           <div class="contact-detail"><div class="label">Response</div><div class="value">Within 1 business day</div></div>
         </div>
